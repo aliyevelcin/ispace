@@ -1,0 +1,765 @@
+{% extends 'base.html' %}
+ {% load static %}
+  {% block css %}
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  {% endblock %}
+ {% block content %}
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+<!-- navbar end -->
+
+<div style="margin-top: -16px;" id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  
+    <ol style="margin-top: 30px; " class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="8"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="9"></li>
+    </ol>
+
+ 
+  <div class="carousel-inner" style="border-bottom: 1px solid #7D7D7D;">
+    {% for slider in sliders %}
+    <div class="carousel-item {% if forloop.first %}active{% endif %}">
+      <img class="d-block w-100 slide-img" src="{{ slider.image }}" alt="{{ slider.alt }}">
+    </div>
+    {% endfor %}
+  </div>
+
+
+</div>
+
+<!-- ------------ -->
+
+  <div class="carousel-container"  >
+
+  <h1 class="h1">View all Apple products</h1>
+    <button class="btn left" id="leftBtn">❮</button>
+
+ 
+    <div class="carousel-track" id="track">
+
+    <div style="text-align: center; margin-left: 40px; margin-top: 20px;">
+      <img class="img" src="{% static 'img/Screen Shot 2025-10-18 at 14.19.26.png' %}" alt="">
+      <p class="p">Mac</p>
+      <p class="p2">From 1 499 ₼</p>
+    </div>
+    <div style="text-align: center; margin-left: 40px; margin-top: 20px;">
+      <img style="width: 80px !important;" class="img" src="{% static 'img/Screen Shot 2025-10-18 at 14.47.16.png' %}" alt="">
+      <p class="p">Iphone</p>
+      <p class="p2">From 999 ₼</p>
+    </div>
+    <div style="text-align: center; margin-left: 40px; margin-top: 20px;">
+      <img style="width: 80px !important;" class="img" src="{% static 'img/Screen Shot 2025-10-18 at 14.47.21.png' %}" alt="">
+      <p class="p">iPad</p>
+      <p class="p2">From 899 ₼</p>
+    </div>
+    <div style="text-align: center; margin-left: 40px; margin-top: 20px;">
+      <img style="width: 80px !important;" class="img" src="{% static 'img/Screen Shot 2025-10-18 at 14.47.25.png' %}" alt="">
+      <p class="p"><span style="font-size: 15px;"></span>WATCH</p>
+      <p class="p2">From 379 ₼</p>
+    </div>
+    <div style="text-align: center; margin-left: 40px; margin-top: 20px;">
+      <img class="img" src="{% static 'img/Screen Shot 2025-10-18 at 14.47.30.png' %}" alt="">
+      <p class="p">Airpods</p>
+      <p class="p2">From 349 ₼</p>
+    </div>
+    <div style="text-align: center; margin-left: 40px; margin-top: 20px;">
+      <img style="width: 80px !important;" class="img" src="{% static 'img/Screen Shot 2025-10-18 at 14.47.34.png' %}" alt="">
+      <p class="p"><span style="font-size: 15px;"></span>TV & Home</p>
+      <p class="p2">From 389 ₼</p>
+    </div>
+    <div style="text-align: center; margin-left: 40px; margin-top: 20px;">
+      <img class="img" src="{% static 'img/Screen Shot 2025-10-18 at 14.47.40.png' %}" alt="">
+      <p class="p">Accessories</p>
+      <p class="p2">From 3 ₼</p>
+    </div>
+    <div style="text-align: center; margin-left: 40px; margin-top: 20px;">
+      <img class="img" src="{% static 'img/Screen Shot 2025-10-18 at 14.47.47.png' %}" alt="">
+      <p class="p">AirTag</p>
+      <p class="p2">From 89 ₼</p>
+    </div>
+  </div>
+    <button class="btn right" id="rightBtn">❯</button>
+
+  <hr style="background-color: #7D7D7D; opacity: 0.3; width: 1280px;">
+</div>  
+
+<!-- -------------- -->
+
+
+  <div style="height: 550px;" class="carousel-container"  >
+
+    <h1 style="margin-top: 20px;" class="h1">See what's new</h1>
+
+    <button class="btn left" id="leftBtn">❮</button>
+
+ <div style="padding-bottom: 50px;">
+    <div" class="carousel-track" id="track">
+    
+    {% for model, product in new_products %}
+<div>
+  <div class="card" style="width: 18rem; margin-left: 45px;">
+  <a class="card-a" href="{% url 'core:pay' model product.id %}">
+  <div style="justify-content: center; display: flex;">
+    <img class="card-img" src="{{ product.image.url }}" class="card-img-top" alt="...">
+    </div>
+    <div class="card-body">
+      <p class="card-new">NEW</p>
+      <h5 class="card-title">{{ product.name }}</h5>
+      <p class="card-p">{{ product.marka }}</p>
+      <p class="card-text">{{ product.description }}</p>
+    </div>
+    </a>
+</div>
+</div>
+{% endfor %}
+
+
+    <button class="btn right" id="rightBtn">❯</button>
+
+  </div>
+
+</div>  
+
+
+<!-- -------------- -->
+  <hr style="background-color: #7D7D7D; opacity: 0.3; width: 1270px; margin-top: -30px;">
+<div>
+<div style="display: flex; margin-top: 30px;">
+  <div>
+      <img class="img1" style="margin-left: 50px;" src="https://cdn0.it4profit.com/s3size/el:t/rt:fill/plain/s3://cms/static-pages/17/1d/171d5580fcaaf03498073adf7346e3a3/neo00408_1.webp" alt="">
+  </div>
+  <div class="div">
+      <h3 class="h3">Trade-in</h3>
+      <p class="p3">Upgrade your MacBook and iPhone via Trade-in on <br>iSpace</p>
+
+      <a href="{% url 'core:trade_in' %}">
+      <button class="button">Select</button>
+      </a>
+
+  </div>
+</div>
+
+<div style="display: flex; margin-top: 30px; margin-left: 50px;">
+  <div class="div2">
+    <h3 class="h3">Loyalty Program</h3>
+    <p class="p3">Shop at iSpace - get more bonuses. Exchange your <br>bonuses for up to 30% on new purchases.</p>
+
+    <a href="https://promo.ispace.az/en/wallet">
+      <button class="button">Select</button>
+    </a>
+    
+  </div>
+  <div>
+      <img class="img2" style="margin-left: 0px;" src="https://cdn0.it4profit.com/s3size/el:t/rt:fill/plain/s3://cms/rich-block/9e/ee/9eeeb3684b367ae3bdb856f60f0d8517/20250107_dsc04861_1_1.webp" alt="">
+  </div>
+</div>
+
+<div style="display: flex; margin-top: 30px;">
+  <div>
+      <img class="img1" style="margin-left: 50px;" src="https://cdn0.it4profit.com/s3size/el:t/rt:fill/plain/s3://cms/rich-block/f8/5f/f85fafb86bd30f1753eded15317ef171/image_1_1.webp" alt="">
+  </div>
+  <div class="div">
+      <h3 class="h3">Blog</h3>
+      <p class="p3">News, press releases, lifehacks, reviews and other useful <br>information</p>
+
+      <a href="https://ispace.az/blog/en/">
+      <button class="button">Select</button>
+      </a>
+
+  </div>
+</div>
+</div>
+<!-- ---------------------- -->
+
+  <hr style="background-color: #7D7D7D; opacity: 0.3; width: 1270px; margin-top: 40px;">
+
+
+ <div style="height: 370px;" class="carousel-container"  >
+
+    <h1 style="margin-top: 20px;" class="h1">Discover services and more</h1>
+
+    <button style="margin-top: -70px;" class="btn left" id="leftBtn">❮</button>
+
+ 
+    <div class="carousel-track" id="track">
+<div>
+
+<div style="display: flex; padding-bottom: 50px;">
+
+<div class="">
+  <a class="a" href="{% url 'core:offers' %}">
+  <div class="card2" style="margin-left: 50px;">
+  <div class="card-body">
+    <h6 class="h6" style="color: #5856d6;">BACK TO SCHOOL</h6>
+    <h5 class="card-h5"><span style="color: #5856d6;">Special offers</span> on Apple Devices</h5>
+  </div>
+</div>
+</a>
+
+</div>
+
+<div class="">
+  <a class="a" href="{% url 'core:stores' %}">
+  <div class="card2" style="margin-left: 50px;">
+  <div class="card-body">
+    <h6 class="h6" style="color: #707070;">PICKUP</h6>
+    <h5 class="card-h5"><span style="color: #707070;">Delivery and Pickup.</span> Order online and get home delivery. Delivery and Pickup. Order online and get home delivery.</h5>
+  </div>
+</div>
+</a>
+
+</div>
+
+<div class="">
+  <a class="a" href="{% url 'core:financing' %}">
+  <div class="card2" style="margin-left: 50px;">
+  <div class="card-body">
+    <h6 class="h6" style="color: #0071BC;">FINANCING</h6>
+    <h5 class="card-h5">Get special financing.<span style="color: #0071BC;"> <br>Pay over time, <br>interest-free.</span></h5>
+  </div>
+</div>
+</a>
+
+</div>
+
+<div class="">
+  <a class="a" href="{% url 'core:offers' %}">
+  <div class="card2" style="margin-left: 50px;">
+  <div class="card-body">
+    <h6 class="h6" style="color: #008900;">SALE</h6>
+    <h5 class="card-h5"><span style="color: #008900;">Find low everyday <br>prices and buy</span>  online for delivery or in-store pick-up.</h5>
+  </div>
+</div>
+</a>
+
+</div>
+
+<div class="">
+  <a class="a" href="{% url 'core:trade_in' %}">
+  <div class="card2" style="margin-left: 50px;">
+  <div class="card-body">
+    <h6 class="h6" style="color: #0071BC;">TRADE-IN</h6>
+    <h5 class="card-h5">Upgrade your.<span style="color: #0071BC;"> iPhone <br>11 / iPhone 12.</span></h5>
+  </div>
+</div>
+</a>
+
+</div>
+
+
+</div>
+    
+  </div>
+    <button style="margin-top: -70px;" class="btn right" id="rightBtn">❯</button>
+
+</div> 
+</div>
+
+
+<!-- ---------------------------- -->
+
+<div style="background-color: #F7F7F7; height: 720px;">
+  <hr style="background-color: #7D7D7D; opacity: 0.3; width: 1270px; margin-top: 0px;">
+
+
+  <div style="display: flex;">
+    <div class="divcard">
+    <p style="margin-top: 30px;" class="card-new2">NEW</p>
+    <h3 class="h3card" style="margin-top: -5px;">iPhone 17 Pro</h3>
+    <p class="p3" style="margin-top: 1px;">All out Pro. <br>From 3 209 ₼</p>
+    <a href="">
+    <button class="button2">Notify me</button>
+    </a>
+    <img class="cardimg" src="https://cdn0.it4profit.com/s3size/el:t/rt:fill/plain/s3://cms/product/8a/8a/8a8ae008f8b519511bfc41e8d16b6f81/250915140023667226.webp" alt="">
+    </div>
+<!-- ---------------------------- -->
+    <div style="display: grid;">
+      <div class="divcard2">
+        <div>
+      <img class="cardimg2" src="https://cdn0.it4profit.com/s3size/el:t/rt:fill/plain/s3://cms/product/29/35/293546a1c05d0f29206c8d339c0e2335/251016120017722126.webp" alt="">
+    </div>
+    <div>
+    <p style="margin-top: 80px; margin-left: 90px;" class="card-new2">NEW</p>
+    <h3 class="h3card" style="margin-left: 10px;">iPad Pro 11 M5</h3>
+    <p class="p3" style="margin-top: 1px; text-align: center;">Mmmmm. Power. <br>From 2 569 ₼</p>
+    <button class="button2" style="margin-left: 45px;">Pre-Order</button>
+    </div>
+    </div>
+      <div>
+<div class="divcard2">
+        <div>
+      <img class="cardimg2" src="https://cdn0.it4profit.com/s3size/el:t/rt:fill/plain/s3://cms/product/77/b2/77b2b078ccedce46f18e0514e7476d28/250910160020664746.webp" alt="">
+    </div>
+    <div>
+    <p style="margin-top: 80px; margin-left: 90px;" class="card-new2">NEW</p>
+    <h3 class="h3card" style="margin-left: 10px;">AirPods Pro 3</h3>
+    <p class="p3" style="margin-top: 1px; margin-left: 0px; text-align: center;">AirPods Pro 3. Now with Heart <br>Rate Sensing. <br>From 689 ₼</p>
+    <button class="button2" style="margin-left: 45px;">Buy now</button>
+    </div>
+    </div>
+      </div>
+    </div>
+<!-- ---------------------------- -->
+  </div>
+</div>
+
+<!-- ---------------------------- -->
+
+  <hr style="background-color: #7D7D7D; opacity: 0.3; width: 1270px; margin-top: 0px;">
+
+
+
+<div style="height: 700px;" class="carousel-container">
+
+    <h1 style="margin-top: 20px; text-align: center;" class="h1">Special offers for the new school year</h1>
+
+    <button style="margin-top: -70px;" class="btn left2" id="leftBtn">❮</button>
+
+ 
+    <div class="carousel-track" id="track"  id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+
+      <ol style="margin-top: 30px; " class="carousel-indicators two">
+      <li data-target="#carouselExampleIndicators2" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators2" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators2" data-slide-to="2"></li>
+    </ol>
+<div>
+
+<div style="display: flex; padding-bottom: 50px;">
+    {% for  mac in macs %} 
+<div style="text-align: center; margin-left: 50px;">
+  <div class="imgborder">
+    <a href="{% url 'core:pay' 'macs' mac.id %}">
+      <img class="imginborder" src="{{ mac.image.url }}" alt="">
+    </a>
+  </div>
+  <p style="color: #5856D6; font-size: 14px; font-weight: 600; margin-top: 5px;">0 | 0 | 18 <span style="color: #008900;">-10% WITH VISA</span> <span style="color: #0071BC;">TRADE-IN</span></p>
+  
+  <a class="ainborder" href="{% url 'core:pay' 'macs' mac.id %}">
+  <p class="pinborder">{{ mac.name }}</p>
+  </a>
+
+  <p class="p2inborder">{{ mac.price }} ₼ <br></p>
+  <a href="{% url 'core:pay' 'macs' mac.id %}">
+  <button class="button2" style="margin-top: -10px;">Add to cart</button>
+  </a>
+</div>
+{% endfor %}
+
+
+</div>
+    
+  </div>
+    <button style="margin-top: -70px;" class="btn right2" id="rightBtn">❯</button>
+
+</div> 
+</div>
+<!-- ---------------------------- -->
+
+
+
+<hr style="background-color: #7D7D7D; opacity: 0.3; width: 1270px; margin-top: 0px;">
+
+  <div style="height: 580px;" class="carousel-container"  >
+
+    <h1 style="margin-top: 20px;" class="h1">See what's new</h1>
+
+    <button class="btn left" id="leftBtn">❮</button>
+
+ <div style="padding-bottom: 50px;">
+    <div" class="carousel-track" id="track">
+
+
+    
+
+<div  style="display: flex;">
+  {% for new in news %}
+  <div class="card-two" style="width: 18rem; margin-left: 40px;">
+      <a class="card-a" href="">
+      <div style="justify-content: center; display: flex;">
+  <img style="width: 300px; height: 200px; padding-top: 10px;" class="card-img2" src="{{new.img.url}}" class="card-img-top" alt="...">
+  </div>
+  <div class="card-body">
+    <p class="card-text2">{{new.name}}</p>
+    <h5 class="card-title">{{new.title}}</h5>
+    <p class="card-p">{{new.text}}</p>
+    <p class="card-text3">{{new.description}}</p>
+
+  </div>
+  </a>
+</div>
+
+{% endfor %}
+
+
+
+
+</div>
+    
+  </div>
+    <button class="btn right" id="rightBtn">❯</button>
+
+  </div>
+
+</div>  
+
+
+
+<!-- ---------------------------- -->
+
+
+<hr style="background-color: #7D7D7D; opacity: 0.3; width: 1270px; margin-top: 0px;">
+
+<div style="height: 700px;" class="carousel-container">
+
+    <h1 style="margin-top: 20px; text-align: center;" class="h1">Trade-in your current device</h1>
+
+    <button style="margin-top: -70px;" class="btn left2" id="leftBtn">❮</button>
+
+ 
+    <div class="carousel-track" id="track"  id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+
+      <ol style="margin-top: 30px; " class="carousel-indicators two">
+      <li data-target="#carouselExampleIndicators2" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators2" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators2" data-slide-to="2"></li>
+    </ol>
+<div>
+
+<div style="display: flex; padding-bottom: 50px;">
+      {% for model, product in new_products %}
+<div style="text-align: center; margin-left: 50px;">
+  <div class="imgborder">
+    <a href="{% url 'core:pay' model product.id %}">
+      <img class="imginborder" src="{{product.image.url}}" alt="">
+    </a>
+  </div>
+  <p class="card-new" style="font-size: 14px; font-weight: 600; margin-top: 5px;">NEW</p>
+  
+  <a class="ainborder" href="{% url 'core:pay' model product.id %}">
+  <p class="pinborder">{{product.name}}</p>
+  </a>
+
+  <p class="p2inborder">{{product.price}} ₼</p>
+  <a href="{% url 'core:pay' model product.id %}">
+  <button class="button2" style="margin-top: -10px;">Add to cart</button>
+  </a>
+</div>
+
+{% endfor %}
+
+
+</div>
+    
+  </div>
+    <button style="margin-top: -70px;" class="btn right2" id="rightBtn">❯</button>
+
+</div> 
+</div>
+
+
+<!-- ---------------------------- -->
+
+<hr style="background-color: #7D7D7D; opacity: 0.3; width: 1270px; margin-top: 0px;">
+
+<div style="height: 300px;">
+  <div class="container-fluid">
+	<div class="row">
+		<div class="col-md-4">
+      <div style="text-align: center;">
+      <img style="margin-left: 0px; margin-top: 30px;" class="container-img" src="https://cdn0.it4profit.com/s3size/el:t/rt:fill/plain/s3://cms/banner/9c/b6/9cb65b409eafc050df8976c9dcfcb5d9/support.webp" alt="">
+    <h5 class="container-h1">Get expert service and <br>support</h5>
+    <p class="container-p">From setting up your device to <br>recovering your Apple ID to replacing the <br>screen, Apple Support has you covered.</p>
+    <a class="container-a" href="{% url 'core:services' %}">Learn more <span><svg style="margin-left: -5px;" data-v-e79eec49="" data-v-a6915dff="" width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg" class="" stroke-color="currentColor" fill-color="currentColor"><path d="M9.10742 14.1333L13.4835 10.3125L9.10742 6.49167L10.458 5.3125L16.1846 10.3125L10.458 15.3125L9.10742 14.1333Z" fill="currentColor"></path></svg></span></a>
+		</div>
+    </div>
+		<div class="col-md-4">
+      <div style="text-align: center;">
+      <img style="margin-left: 0px; margin-top: 30px;" class="container-img" src="https://cdn0.it4profit.com/s3size/el:t/rt:fill/plain/s3://cms/banner/93/5b/935b7539e5bf7832d609e4f2640ed347/financing.webp" alt="">
+    <h5 class="container-h1">Financing and Credit <br>Plans</h5>
+    <p class="container-p">With our credit programs, Apple easily <br>fits into your budget.</p>
+    <a class="container-a" href="{% url 'core:financing' %}">Learn more <span><svg style="margin-left: -5px;" data-v-e79eec49="" data-v-a6915dff="" width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg" class="" stroke-color="currentColor" fill-color="currentColor"><path d="M9.10742 14.1333L13.4835 10.3125L9.10742 6.49167L10.458 5.3125L16.1846 10.3125L10.458 15.3125L9.10742 14.1333Z" fill="currentColor"></path></svg></span></a>
+		</div>
+		</div>
+		<div class="col-md-4">
+      <div style="text-align: center;">
+      <img style="margin-left: 0px; margin-top: 30px;" class="container-img" src="https://cdn0.it4profit.com/s3size/el:t/rt:fill/plain/s3://cms/banner/cf/12/cf120a4498b2970697999b0e9bf183f8/shipping.webp" alt="">
+    <h5 class="container-h1">Buy online, pick up in <br>store</h5>
+    <p class="container-p">Place your order online and pick it up at <br>a local Store.</p>
+    <a class="container-a" href="{% url 'core:stores' %}">Learn more <span><svg style="margin-left: -5px;" data-v-e79eec49="" data-v-a6915dff="" width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg" class="" stroke-color="currentColor" fill-color="currentColor"><path d="M9.10742 14.1333L13.4835 10.3125L9.10742 6.49167L10.458 5.3125L16.1846 10.3125L10.458 15.3125L9.10742 14.1333Z" fill="currentColor"></path></svg></span></a>
+		</div>
+		</div>
+	</div>
+</div>
+</div>
+
+
+<!-- ---------------------------- -->
+
+<hr style="background-color: #7D7D7D; opacity: 0.3; width: 1270px; margin-top: 0px;">
+
+
+<div style="height: 700px;" class="carousel-container">
+
+    <h1 style="margin-top: 20px; text-align: center;" class="h1">All things iPad</h1>
+
+    <button style="margin-top: -70px;" class="btn left2" id="leftBtn">❮</button>
+
+ 
+    <div class="carousel-track" id="track"  id="carouselExampleIndicators2">
+
+      
+<div>
+
+<div style="display: flex; padding-bottom: 50px;">
+  {% for ipad in ipads %}
+<div style="text-align: center; margin-left: 100px;">
+  <div class="imgborder">
+    <a href="{% url 'core:pay' 'ipads' ipad.id %}">
+      <img class="imginborder" src="{{ipad.image.url}}" alt="">
+    </a>
+  </div>
+    <p style="color: #5856D6; font-size: 14px; font-weight: 600; margin-top: 5px;">24 MONTHS INSTALLMENT</p>
+
+  
+  <a class="ainborder" href="{% url 'core:pay' 'ipads' ipad.id %}">
+  <p class="pinborder">{{ipad.name}}</p>
+  </a>
+
+  <p class="p2inborder">{{ipad.price}} ₼ <br>From {{ipad.description}}</p>
+  <a href="{% url 'core:pay' 'ipads' ipad.id %}">
+  <button class="button2" style="margin-top: -10px;">Add to cart</button>
+  </a>
+</div>
+
+
+{% endfor %}
+
+
+
+
+</div>
+    
+  </div>
+    <button style="margin-top: -70px;" class="btn right2" id="rightBtn">❯</button>
+
+</div> 
+</div>
+
+<!-- ---------------------------- -->
+
+
+<hr style="background-color: #7D7D7D; opacity: 0.3; width: 1270px; margin-top: 0px;">
+
+  <div style="height: 550px;" class="carousel-container"  >
+
+    <h1 style="margin-top: 20px;" class="h1">Featured Apple Accessories</h1>
+
+    <button class="btn left" id="leftBtn">❮</button>
+
+ <div style="padding-bottom: 50px;">
+    <div class="carousel-track" id="track">
+      {% for accessories in accessories %}
+<div>
+  <div class="card" style="width: 18rem; margin-left: 45px;">
+  <a class="card-a" href="{% url 'core:pay' 'accessories' accessories.id %}">
+  <div style="justify-content: center; display: flex;">
+    <img class="card-img" src="{{accessories.image.url}}" class="card-img-top" alt="...">
+    </div>
+    <div class="card-body">
+      <p class="card-new">NEW</p>
+      <h5 class="card-title">{{accessories.name}}</h5>
+      <p class="card-p">{{accessories.marka}}</p>
+      <p class="card-text">{{accessories.description}}</p>
+    </div>
+    </a>
+</div>
+</div>
+{% endfor %}
+
+
+    
+  </div>
+    <button class="btn right" id="rightBtn">❯</button>
+
+  </div>
+
+</div>  
+
+
+
+<!-- ---------------------------- -->
+
+
+<hr style="background-color: #7D7D7D; opacity: 0.3; width: 1270px; margin-top: 0px;">
+
+
+<div style="height: 700px;" class="carousel-container">
+
+    <h1 style="margin-top: 20px; text-align: center;" class="h1">Quick checkout</h1>
+
+    <button style="margin-top: -70px;" class="btn left2" id="leftBtn">❮</button>
+
+ 
+    <div class="carousel-track" id="track" id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+
+      <ol style="margin-top: 30px; " class="carousel-indicators two">
+      <li data-target="#carouselExampleIndicators2" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators2" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators2" data-slide-to="2"></li>
+    </ol>
+      
+<div>
+
+<div style="display: flex; padding-bottom: 50px;">
+      {% for phone in iphones %}
+<div style="text-align: center; margin-left: 100px;">
+  <div class="imgborder">
+    <a href="{% url 'core:pay' 'iphones' phone.id %}">
+      <img class="imginborder" src="{{phone.image.url}}" alt="">
+    </a>
+  </div>
+    <p style="color: #5856D6; font-size: 14px; font-weight: 600; margin-top: 5px;">24 MONTHS INSTALLMENT</p>
+
+  
+  <a class="ainborder" href="{% url 'core:pay' 'iphones' phone.id %}">
+  <p class="pinborder">{{phone.name}}</p>
+  </a>
+
+  <p class="p2inborder">{{phone.price}} ₼ <br>{{phone.description}}</p>
+  <a href="{% url 'core:pay' 'iphones' phone.id %}">
+  <button class="button2" style="margin-top: -10px;">Add to cart</button>
+  </a>
+</div>
+{% endfor %}
+
+
+
+
+</div>
+    
+  </div>
+    <button style="margin-top: -70px;" class="btn right2" id="rightBtn">❯</button>
+
+</div> 
+</div>
+
+
+
+<hr style="background-color: #7D7D7D; opacity: 0.3; width: 1270px; margin-top: 0px;">
+
+<div style="margin-left: 40px;">
+  <h5 class="partner-h5">iSpace — Official Apple Premium Partner in Azerbaijan</h5>
+  <p class="partner-p">iSpace is an international retail chain of Apple stores in Azerbaijan with Apple Premium Partner status. We work directly with Apple and follow their strict requirements, from service <br>to brand store design. Rest assured: all Apple products in our catalogs are new and original. The iSpace ecosystem includes an online store and four retail locations in Baku.</p>
+  <h6 class="partner-h6">Why Are Apple Devices Popular?</h6>
+  <p class="partner-p">
+Apple isn't just a device manufacturer. It's an ecosystem where everything is well thought out, from security and a closed OS to design and attention to detail. A few reasons to buy <br>Apple products:
+<br>
+<br>
+1. Intuitive interface — all the brand's devices are easy to operate without a manual. Navigation is logical, the system works smoothly, and support for the Russian and English languages makes devices even more user-friendly.
+<br>
+2. Single space — all brand gadgets synchronize with each other and work as one. You can start texting on your iPhone and finish on your Mac, or switch a call from your phone to your watch or laptop.
+<br>
+3. Privacy — the company primarily engineers devices with security in mind, so it encrypts data, protects the system from outside interference, and eliminates information leaks.
+<br>
+<br>
+Even years after buying a phone, tablet, or other gadget, you can expect full support — from big operating system updates to new options.
+</p>
+
+
+<p>
+  <a class="partner-btn" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+    Learn more
+  </a>
+  
+</p>
+<div class="collapse" id="collapseExample">
+  <h6 class="partner-h6">What Can You Find in iSpace?</h6>
+  <p class="partner-p">When you visit our Apple store, you'll have access to all of the brand's current devices, from iPhone to Mac Studio. Here, you can select the ideal smartphone model, create a <br>customized configuration for any task, or upgrade to a more suitable device.
+<br>
+<br>
+All the latest iPhone models are available, from Basic to Pro versions. For work, school, and creative projects, select from iPads and MacBooks, and for stationary work, choose an iMac or Mac Studio and Studio Display.
+<br>
+<br>
+The Apple Watch is no longer just an activity tracker. The device helps you monitor your health, answer calls, control music, use navigation, and even send an SOS signal. It's perfect for sports, outdoor activities, and everyday life tasks.
+<br>
+<br>
+To complete the brand's collection of gadgets, you can add wireless headphones AirPods, which are available in several configurations: in-ear, in-canal, and full-size. Their <br>strengths: balanced sound, smart control, and quick integration into the ecosystem. In iSpace, you will find all the necessary accessories for any new gadget: styluses and <br>keyboards for your tablet, adapters for your laptop, cases and charging accessories for your smartphone.</p>
+  <h6 class="partner-h6">iSpace Advantages</h6>
+  <p class="partner-p">We strictly fulfill all Apple's requirements for high-quality service: experts are trained in brand standards and know everything about the products, the interior of the stores is <br>pleasant, and we pay attention to all details in service. Why iSpace is convenient for you:
+<br>
+<br>
+· official Apple equipment is in public access, and you can test new watch options, smartphone cameras, or headphone fits before buying;
+<br>
+
+· several payment methods, including the possibility to switch from one gadget to another with Trade In;
+<br>
+· expert assistance covers consultations, account creation, and data transfer — you will get a fully personalized gadget.
+<br>
+iSpace stores are located in different locations in Baku. There are also two iSupport service centers. You can visit us with guarantee issues and just to repair your phone, laptop, or tablet. Our specialists in the centers are also trained and use only original spare parts in their work. To make you confident in the quality of repair, we give a three-month warranty.
+<br>
+<br>
+You can place an order online with delivery across Azerbaijan or in any retail store — in all cases, original Apple equipment is presented everywhere. Current locations of stores and service centers are listed on the website. Buy gadgets of a trusted brand and use them for your joy.</p>
+
+
+</div>
+<hr style="background-color: #7D7D7D; opacity: 0.3; width: 1270px; margin-top: 40px; margin-left: -40px !important;">
+</div>
+
+
+
+<!-- FOOTER START -->
+
+
+
+
+
+
+
+
+
+
+ <script>
+    const track = document.getElementById('track');
+    const btnLeft = document.getElementById('leftBtn');
+    const btnRight = document.getElementById('rightBtn');
+
+    btnLeft.addEventListener('click', () => {
+      track.scrollBy({ left: -300, behavior: 'smooth' });
+    });
+
+    btnRight.addEventListener('click', () => {
+      track.scrollBy({ left: 300, behavior: 'smooth' });
+    });
+  </script>
+       
+       {% endblock %}

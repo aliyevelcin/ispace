@@ -1,0 +1,165 @@
+{% extends 'base.html' %}
+ {% load static %}
+
+ {% block css %}
+  <link rel="stylesheet" href="{% static 'css/accessories.css' %}">
+  {% endblock %}
+ {% block content %}
+
+
+
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+<!-- navbar end -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ------------ -->
+
+<div class="carousel-container">
+    <button class="btn left" id="leftBtn">❮</button>
+    <div class="carousel-track" id="track">
+      {% for accessories in accessoriess %}
+      <div class="item">
+        <a class="a_border" href="{% url 'core:pay' 'accessories' accessories.id %}">
+<a class="a_border" href="{% url 'core:pay' 'accessories' accessories.id %}">
+    <div class="divs">
+      <div style="display: flex;">
+      <img class="img" src="{{ accessories.image.url }}" alt="">
+      <div>
+      <p style="margin-top: 55px;" class="card-new2">NEW</p>
+      <p class="p">{{ accessories.name }}</p>
+      <p class="p2">From {{ accessories.price }} ₼</p>
+      </div>
+      </div>
+    </div>
+  </a>
+      </div>
+      {% endfor %}
+
+
+    </div>
+    <button class="btn right" id="rightBtn">❯</button>
+  <hr style="background-color: #7D7D7D; opacity: 0.3; width: 1280px;">
+</div>  
+
+<!-- -------------- -->
+
+
+
+<div>
+  {% for accessories in accessoriess %}
+    <div class="container-fluid">
+	<div class="row">
+		<div class="col-md-6">
+            <div style="margin-top: 70px; margin-left: 135px;">
+            <p class="card-new">NEW</p>
+            <h2 class="card-h2">{{ accessories.name }}</h2>
+            <p class="card-p">Shop {{ accessories.name }} From {{ accessories.price }} ₼</p>
+            <a href="{% url 'core:pay' 'accessories' accessories.id %}">
+            <button class="card-button">Buy now</button>
+            </a>
+            </div>
+		</div>
+		<div class="col-md-6">
+            <div style="text-align: right;">
+            <img class="card-img" src="{{ accessories.image.url }}" alt="">
+            </div>
+        </div>
+        <hr style="background-color: #7D7D7D; opacity: 0.3; width: 100%; margin-top: 30px;">
+	</div>
+</div>
+{% endfor %}
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- FOOTER START -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script>
+    const track = document.getElementById('track');
+    const btnLeft = document.getElementById('leftBtn');
+    const btnRight = document.getElementById('rightBtn');
+
+    btnLeft.addEventListener('click', () => {
+      track.scrollBy({ left: -300, behavior: 'smooth' });
+    });
+
+    btnRight.addEventListener('click', () => {
+      track.scrollBy({ left: 300, behavior: 'smooth' });
+    });
+  </script>
+
+
+
+{% endblock %}

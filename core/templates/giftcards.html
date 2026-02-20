@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+ {% load static %}
+  {% block css %}
+  <link rel="stylesheet" href="{% static 'css/giftcards.css' %}">
+  {% endblock %}
+ {% block content %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ------------ -->
+
+<div>
+<h1 class="h1_start">Gift Certificate</h1>
+<hr style="background-color: #7D7D7D; opacity: 0.4; width: 1270px; margin-top: 40px; margin-left: 0px !important;">
+</div>
+
+<!-- -------------- -->
+
+
+
+<div>
+<div class="container-fluid">  
+ {% for giftcard in giftcardss %}
+	<div class="row">
+		<div class="col-md-6">
+            <div style="margin-top: 70px; margin-left: 70px;">
+            <h2 style="margin-top: 100px;" class="card-h2">{{ giftcard.name }}</h2>
+            <p class="card-p">{{ giftcard.description }}</p>
+            <a href="{% url 'core:pay' 'giftcards' giftcard.id %}" style="outline: none; text-decoration: none;">
+            <button class="card-button">Buy now</button>
+            </a>
+            </div>
+		</div>
+		<div class="col-md-6">
+            <div style="text-align: right;">
+            <img class="card-img" src="{{ giftcard.image.url }}" alt="">
+            </div>
+        </div>
+        <hr style="background-color: #7D7D7D; opacity: 0.3; width: 100%; margin-top: 30px;">
+	</div>
+    {% endfor %}
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script>
+    const track = document.getElementById('track');
+    const btnLeft = document.getElementById('leftBtn');
+    const btnRight = document.getElementById('rightBtn');
+
+    btnLeft.addEventListener('click', () => {
+      track.scrollBy({ left: -300, behavior: 'smooth' });
+    });
+
+    btnRight.addEventListener('click', () => {
+      track.scrollBy({ left: 300, behavior: 'smooth' });
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

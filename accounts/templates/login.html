@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+ {% load static %}
+  {% block css %}
+  <link rel="stylesheet" href="{% static 'css/register.css' %}">
+  {% endblock %}
+ {% block content %}
+
+
+
+
+<div style="height: 400px;">
+ <div class="login-box">
+        <h2 style="text-align: center;">Login</h2>
+    <form action="#" method="post">
+        {% csrf_token %}
+        <label class="register-label" for="username">Username:</label>
+       {{ form.username }}
+        <br>
+        <label class="register-label" for="password">Password:</label>
+       {{ form.password }}
+        <br>    
+
+        <button type="submit" class="register-btn">Login</button>
+        
+        <br>
+        <br>
+        <a class="login-a" href="{% url 'accounts:register' %}">Don't have an account? <span style="color: #0071e3;">Register</span></a>
+
+
+        </div>
+        </div>
+
+
+{% endblock %}

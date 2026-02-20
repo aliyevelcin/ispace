@@ -1,0 +1,714 @@
+{% extends 'base.html' %}
+ {% load static %}
+
+ {% block css %}
+  <link rel="stylesheet" href="{% static 'css/list.css' %}">
+  {% endblock %}
+ {% block content %}
+
+
+
+
+
+
+<!-- ------------ -->
+
+<div class="carousel-container">
+    <button class="btn left" id="leftBtn">❮</button>
+    <div class="carousel-track" id="track">
+      {% for airpods in airpodss %}
+      <div class="item">
+        <a class="a_border" href="{% url 'core:pay' 'airpods' airpods.id %}">
+    <div class="divs">
+      <div style="display: flex;">
+      <img class="img" src="{{ airpods.image.url }}" alt="">
+      <div>
+      <p style="margin-top: 35px;" class="card-new2">NEW  <span class="number3">TRADE-IN</span></p>
+      <p class="p">{{ airpods.name }}</p>
+      <p class="p2">From {{ airpods.price }} ₼</p>
+      </div>
+      </div>
+    </div>
+  </a>
+      </div>
+      {% endfor %}
+
+
+    </div>
+    <button class="btn right" id="rightBtn">❯</button>
+  <hr style="background-color: #7D7D7D; opacity: 0.3; width: 1280px;">
+</div>  
+
+<!-- -------------- -->
+
+
+
+
+
+
+<div>
+<h1 class="h1_start">Airpods</h1>
+<hr style="background-color: #7D7D7D; opacity: 0.4; width: 1270px; margin-top: 40px; margin-left: 0px !important;">
+</div>
+
+<!-- ------------------- -->
+
+
+<div style="margin-top: 40px;">
+
+
+
+
+
+
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3">
+         <div class="accordion" id="accordionExample">
+    <div class="card">
+          <h2 class="mb-0">
+          <button class="button " type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Product type
+          </button>
+          
+        </h2>
+  
+      </div>
+  
+      <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+        <div class="card-body">
+        
+          {% for product_type in product_types %}
+          <input class="checkbox" type="checkbox" id="check">
+          <label class="check" for="check">{{ product_type.name }} ({{ product_types.count }})</label>
+          <br>
+          {% endfor %}
+        </div>
+      </div>
+  <hr style="background-color: #7D7D7D; opacity: 0.3; width: 280px; margin-top: 4px; margin-left: 23px !important;">
+  
+  
+  
+  
+    </div>
+      <div class="card">
+          <h2 class="mb-0">
+          <button class="button" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+            Product subtype
+          </button>
+          
+        </h2>
+  
+      </div>
+  
+  
+      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+        <div class="card-body"> 
+          <input class="checkbox" type="checkbox" id="check5">
+          <label class="check" for="check5">Studio Display (6)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check6">
+          <label class="check" for="check6">MacBook (26)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check7">
+          <label class="check" for="check7">Mac Studio (5)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check8">
+          <label class="check" for="check8">Pro Display XDR (2)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check9">
+          <label class="check" for="check9">Mac mini (5)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check10">
+          <label class="check" for="check10">Mac Pro (2)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check11">
+          <label class="check" for="check11">iMac (17)</label>
+        </div>
+      </div>
+  <hr style="background-color: #7D7D7D; opacity: 0.3; width: 280px; margin-top: 4px; margin-left: 23px !important;">
+  
+  
+    <div class="card">
+          <h2 class="mb-0">
+          <button class="button "  type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+            Chip
+          </button>
+          
+        </h2>
+  
+      </div>
+  
+  
+      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+        <div class="card-body">
+          <input class="checkbox" type="checkbox" id="check12">
+          <label class="check" for="check12">Apple M1 (1)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check13">
+          <label class="check" for="check13">Apple M1 Ultra (1)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check14">
+          <label class="check" for="check14">Apple M2 Ultra (1)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check15">
+          <label class="check" for="check15">Apple M2 Max (1)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check16">
+          <label class="check" for="check16">Apple M4 Max (1)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check17">
+          <label class="check" for="check17">Apple M3 Ultra (1)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check18">
+          <label class="check" for="check18">Apple M3 (1)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check19">
+          <label class="check" for="check19">Apple M2 (1)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check20">
+          <label class="check" for="check20">Apple M4 Pro (1)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check21">
+          <label class="check" for="check21">Apple M4 (20)</label>
+  
+
+
+<p>
+  <a class="partner-btn" data-toggle="collapse" href="#collapseExampleChip" role="button" aria-expanded="false" aria-controls="collapseExample">
+    See all
+  </a>
+  
+</p>
+        <div class="collapse" id="collapseExampleChip">
+          <input class="checkbox" type="checkbox" id="check22">
+          <label class="check" for="check22">Apple M4 (17)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check23">
+          <label class="check" for="check23">Apple M2 Ultra (2)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check24">
+          <label class="check" for="check24">Apple M4 Pro (1)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check25">
+          <label class="check" for="check25">Apple M5 (6)</label>
+
+
+          </div>
+        </div>
+      </div>
+  <hr style="background-color: #7D7D7D; opacity: 0.3; width: 280px; margin-top: 4px; margin-left: 23px !important;">
+
+      <div class="card">
+          <h2 class="mb-0">
+          <button class="button "  type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+            Family
+          </button>
+          
+        </h2>
+  
+      </div>
+  
+  
+      <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+        <div class="card-body">
+          <input class="checkbox" type="checkbox" id="check26">
+          <label class="check" for="check26">MacBook Air (19)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check27">
+          <label class="check" for="check27">MacBook Pro (7)</label>
+
+        </div>
+      </div>
+  <hr style="background-color: #7D7D7D; opacity: 0.3; width: 280px; margin-top: 4px; margin-left: 23px !important;">
+  
+ <div class="card">
+          <h2 class="mb-0">
+          <button class="button "  type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+            RAM
+          </button>
+          
+        </h2>
+  
+      </div>
+  
+  
+      <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+        <div class="card-body">
+          <input class="checkbox" type="checkbox" id="check28">
+          <label class="check" for="check28">64 GB (2)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check29">
+          <label class="check" for="check29">8 GB (1)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check30">
+          <label class="check" for="check30">8 GB (1)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check31">
+          <label class="check" for="check31">24 GB (6)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check32">
+          <label class="check" for="check32">32 GB (1)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check33">
+          <label class="check" for="check33">16 GB (15)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check34">
+          <label class="check" for="check34">36 GB (1)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check35">
+          <label class="check" for="check35">16 GB (17)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check36">
+          <label class="check" for="check36">64 GB (2)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check37">
+          <label class="check" for="check37">96 GB (1)</label>
+  
+
+
+<p>
+  <a class="partner-btn" data-toggle="collapse" href="#collapseExampleRAM" role="button" aria-expanded="false" aria-controls="collapseExample">
+    See all
+  </a>
+  
+</p>
+        <div class="collapse" id="collapseExampleRAM">
+          <input class="checkbox" type="checkbox" id="check38">
+          <label class="check" for="check38">24 GB (7)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check39">
+          <label class="check" for="check39">48 GB (1)</label>
+
+
+          </div>
+        </div>
+      </div>
+  <hr style="background-color: #7D7D7D; opacity: 0.3; width: 280px; margin-top: 4px; margin-left: 23px !important;">
+
+  <div class="card">
+          <h2 class="mb-0">
+          <button class="button "  type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+            Total SSD storage capacity
+          </button>
+          
+        </h2>
+  
+      </div>
+  
+  
+      <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
+        <div class="card-body">
+          <input class="checkbox" type="checkbox" id="check40">
+          <label class="check" for="check40">256 GB (11)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check41">
+          <label class="check" for="check41">256 GB (10)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check42">
+          <label class="check" for="check42">512 GB (2)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check43">
+          <label class="check" for="check43">512 GB (12)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check44">
+          <label class="check" for="check44">512 GB (11)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check45">
+          <label class="check" for="check45">1 TB (3)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check46">
+          <label class="check" for="check46">1 TB (4)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check47">
+          <label class="check" for="check47">1 TB (2)</label>
+
+  
+
+        </div>
+      </div>
+  <hr style="background-color: #7D7D7D; opacity: 0.3; width: 280px; margin-top: 4px; margin-left: 23px !important;">
+  
+
+
+   <div class="card">
+          <h2 class="mb-0">
+          <button class="button "  type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven">
+            CPU Core Quantity
+          </button>
+          
+        </h2>
+  
+      </div>
+  
+  
+      <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionExample">
+        <div class="card-body">
+          <input class="checkbox" type="checkbox" id="check48">
+          <label class="check" for="check48">8 (2)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check49">
+          <label class="check" for="check49">8 (5)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check50">
+          <label class="check" for="check50">20 (1)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check51">
+          <label class="check" for="check51">10 (16)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check52">
+          <label class="check" for="check52">24 (1)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check53">
+          <label class="check" for="check53">10 (23)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check54">
+          <label class="check" for="check54">12 (1)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check55">
+          <label class="check" for="check55">12 (1)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check56">
+          <label class="check" for="check56">24 (2)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check57">
+          <label class="check" for="check57">14 (1)</label>
+  
+
+
+<p>
+  <a class="partner-btn" data-toggle="collapse" href="#collapseExampleCPU" role="button" aria-expanded="false" aria-controls="collapseExample">
+    See all
+  </a>
+  
+</p>
+        <div class="collapse" id="collapseExampleCPU">
+          <input class="checkbox" type="checkbox" id="check58">
+          <label class="check" for="check58">14 (1)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check59">
+          <label class="check" for="check59">28 (1)</label>
+
+
+          </div>
+        </div>
+      </div>
+  <hr style="background-color: #7D7D7D; opacity: 0.3; width: 280px; margin-top: 4px; margin-left: 23px !important;">
+
+
+
+  <div class="card">
+          <h2 class="mb-0">
+          <button class="button "  type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="true" aria-controls="collapseEight">
+            Color
+          </button>
+          
+        </h2>
+  
+      </div>
+  
+  
+      <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordionExample">
+        <div class="card-body">
+          <input class="checkbox" type="checkbox" id="check60">
+          <label style="color: gray;" class="check" for="check60">Gray (12)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check61">
+          <label style="color: gray;" class="check" for="check61">Gray (5)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check62">
+          <label style="color: black;" class="check" for="check62">Black (5)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check63">
+          <label style="color: rgb(230, 230, 230);" class="check" for="check63">White (5)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check64">
+          <label style="color: blue;" class="check" for="check64">Blue (4)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check65">
+          <label style="color: blue;" class="check" for="check65">Blue (5)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check66">
+          <label style="color: green;" class="check" for="check66">Green (4)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check67">
+          <label style="color: gray;" class="check" for="check67">Gray (11)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check68">
+          <label style="color: pink;" class="check" for="check68">Pink (4)</label>
+
+
+  
+
+        </div>
+      </div>
+  <hr style="background-color: #7D7D7D; opacity: 0.3; width: 280px; margin-top: 4px; margin-left: 23px !important;">
+
+
+
+
+  <div class="card">
+          <h2 class="mb-0">
+          <button class="button "  type="button" data-toggle="collapse" data-target="#collapseNine" aria-expanded="true" aria-controls="collapseNine">
+            Diagonal size
+          </button>
+          
+        </h2>
+  
+      </div>
+  
+  
+      <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#accordionExample">
+        <div class="card-body">
+          <input class="checkbox" type="checkbox" id="check69">
+          <label class="check" for="check69">24" (17)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check70">
+          <label class="check" for="check70">13.6" (6)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check71">
+          <label class="check" for="check71">32" (2)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check72">
+          <label class="check" for="check72">15.3" (12)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check73">
+          <label class="check" for="check73">27" (6)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check74">
+          <label class="check" for="check74">13.3" (1)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check75">
+          <label class="check" for="check75">16.2" (1)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check76">
+          <label class="check" for="check76">14.2" (6)</label>
+
+  
+
+        </div>
+      </div>
+  <hr style="background-color: #7D7D7D; opacity: 0.3; width: 280px; margin-top: 4px; margin-left: 23px !important;">
+  
+
+<div class="card">
+          <h2 class="mb-0">
+          <button class="button "  type="button" data-toggle="collapse" data-target="#collapseTen" aria-expanded="true" aria-controls="collapseTen">
+            Weight
+          </button>
+          
+        </h2>
+  
+      </div>
+  
+  
+      <div id="collapseTen" class="collapse" aria-labelledby="headingTen" data-parent="#accordionExample">
+        <div class="card-body">
+          <input class="checkbox" type="checkbox" id="check77">
+          <label class="check" for="check77">1.24 kg (5)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check78">
+          <label class="check" for="check78">7.48 kg (2)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check79">
+          <label class="check" for="check79">2.7 kg (1)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check80">
+          <label class="check" for="check80">1.51 kg (11)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check81">
+          <label class="check" for="check81">5.5 kg (6)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check82">
+          <label class="check" for="check82">3.6 kg (2)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check83">
+          <label class="check" for="check83">1.18 kg (1)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check84">
+          <label class="check" for="check84">1.29 kg (1)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check85">
+          <label class="check" for="check85">2.74 kg (1)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check86">
+          <label class="check" for="check86">3.64 kg (1)</label>
+  
+
+
+<p>
+  <a class="partner-btn" data-toggle="collapse" href="#collapseExampleWeight" role="button" aria-expanded="false" aria-controls="collapseExample">
+    See all
+  </a>
+  
+</p>
+        <div class="collapse" id="collapseExampleWeight">
+          <input class="checkbox" type="checkbox" id="check87">
+          <label class="check" for="check87">4.44 kg (13)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check88">
+          <label class="check" for="check88">1.6 kg (1)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check89">
+          <label class="check" for="check89">4.42 kg (4)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check90">
+          <label class="check" for="check90">1.55 kg (6)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check91">
+          <label class="check" for="check91">0.73 kg (1)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check92">
+          <label class="check" for="check92">0.67 kg (3)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check93">
+          <label class="check" for="check93">2.14 kg (1)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check94">
+          <label class="check" for="check94">17.21 kg (2)</label>
+
+
+          </div>
+        </div>
+      </div>
+  <hr style="background-color: #7D7D7D; opacity: 0.3; width: 280px; margin-top: 4px; margin-left: 23px !important;">
+
+
+
+
+  <div class="card">
+          <h2 class="mb-0">
+          <button class="button "  type="button" data-toggle="collapse" data-target="#collapseEleven" aria-expanded="true" aria-controls="collapseEleven">
+            Keyboard language
+          </button>
+          
+        </h2>
+  
+      </div>
+  
+  
+      <div id="collapseEleven" class="collapse" aria-labelledby="headingEleven" data-parent="#accordionExample">
+        <div class="card-body">
+          <input class="checkbox" type="checkbox" id="check95">
+          <label class="check" for="check95">Russian (10)</label>
+          <br>
+          <input class="checkbox" type="checkbox" id="check96">
+          <label class="check" for="check96">English (1)</label>
+
+        </div>
+      </div>
+  <hr style="background-color: #7D7D7D; opacity: 0.3; width: 280px; margin-top: 4px; margin-left: 23px !important;">
+
+
+
+<div class="card">
+          <h2 class="mb-0">
+          <button class="button "  type="button" data-toggle="collapse" data-target="#collapseTwelve" aria-expanded="true" aria-controls="collapseTwelve">
+            Price, ₼
+          </button>
+          
+        </h2>
+  
+      </div>
+  
+  
+      <div id="collapseTwelve" class="collapse" aria-labelledby="headingTwelve" data-parent="#accordionExample">
+        <div class="card-body">
+          <p class="pincard">Highest price 18299 ₼</p>
+          <br>
+          <div style="display: flex;">
+          <input class="inputincard" placeholder="From" type="number">
+          <input style="margin-left: 10px;" class="inputincard" placeholder="To" type="number">
+          </div>
+        </div>
+      </div>
+  <hr style="background-color: #7D7D7D; opacity: 0.3; width: 280px; margin-top: 4px; margin-left: 23px !important;">
+
+
+
+
+
+      </div>
+      <div class="col-md-9">
+        <p class="products-p">{{ count }} Products</p>
+        <div class="row">
+          {% for airpods in airpodss %}
+          <div class="col-md-4">
+            <div class="bordersdiv">
+    <div class="imgborder">
+      <a href="{% url 'core:pay' 'airpods' airpods.id %}">
+        <img class="imginborder" src="{{airpods.image.url}}" alt="">
+      </a>
+    </div>
+    <p class="numberinborder">0 | 0 | 18 <span class="number2inborder">-10% WITH VISA</span> <span class="number3inborder">TRADE-IN</span></p>
+
+  
+    
+    <a class="ainborder" href="{% url 'core:pay' 'airpods' airpods.id %}">
+    <p class="pinborder">{{ airpods.name }}</p>
+    </a>
+
+    <p class="p2inborder">{{ airpods.price }} ₼ <br>{{airpods.description}}</p>
+
+    <a href="{% url 'core:pay' 'airpods' airpods.id %}"> 
+      <button class="button2" style="margin-top: -10px;">Buy now</button>
+    </a>
+  </div>
+          </div>
+          {% endfor %}
+
+
+
+          
+        </div>
+      </div>
+    </div>
+
+  </div>
+  
+  
+  
+</div>  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+<!-- FOOTER START -->
+
+
+
+{% block scripts %}
+
+
+  <script>
+    const track = document.getElementById('track');
+    const btnLeft = document.getElementById('leftBtn');
+    const btnRight = document.getElementById('rightBtn');
+
+    btnLeft.addEventListener('click', () => {
+      track.scrollBy({ left: -300, behavior: 'smooth' });
+    });
+
+    btnRight.addEventListener('click', () => {
+      track.scrollBy({ left: 300, behavior: 'smooth' });
+    });
+  </script>
+
+{% endblock %}

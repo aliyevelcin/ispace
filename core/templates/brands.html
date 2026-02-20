@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+ {% load static %}
+
+ {% block css %}
+  <link rel="stylesheet" href="{% static 'css/brands.css' %}">
+  {% endblock %}
+ {% block content %}
+
+
+<!-- navbar end -->
+
+<img style="max-width: 100%;" src="https://cdn0.it4profit.com/s3size/el:t/f:webp/rt:fill/plain/s3://cms/banner/58/85/5885ad6a4ebf0b78dbd750bdcfed3593/frame_149288526.webp" alt="">
+
+<hr style="background-color: #7D7D7D; opacity: 0.3; width: 1270px;">
+
+
+
+
+<div class="container-fluid">
+	<div class="row">
+        {% for brand in brands %}
+		<div class="col-md-3">
+            <a href="">
+            <img class="brand-img" src="{{brand.image.url}}" alt="">
+		</a>
+        </div>
+        {% endfor %}
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script>
+    const track = document.getElementById('track');
+    const btnLeft = document.getElementById('leftBtn');
+    const btnRight = document.getElementById('rightBtn');
+
+    btnLeft.addEventListener('click', () => {
+      track.scrollBy({ left: -300, behavior: 'smooth' });
+    });
+
+    btnRight.addEventListener('click', () => {
+      track.scrollBy({ left: 300, behavior: 'smooth' });
+    });
+  </script>
+
+
+
+
+
+
+
+
+  {% endblock %}

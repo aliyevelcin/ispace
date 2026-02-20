@@ -1,0 +1,439 @@
+{% extends 'base.html' %}
+ {% load static %}
+
+ {% block css %}
+  <link rel="stylesheet" href="{% static 'css/list.css' %}">
+  <style>
+    .inputincard:focus{
+      box-shadow: none !important;
+      
+       
+    }
+  </style>
+  {% endblock %}
+ {% block content %}
+
+
+
+
+
+
+<!-- ------------ -->
+
+<div class="carousel-container">
+    <button class="btn left" id="leftBtn">❮</button>
+    <div class="carousel-track" id="track">
+      {% for mac in header_mac %}
+      <div class="item">
+        <a class="a_border" href="{% url 'core:pay' 'macs' mac.id %}">
+<a class="a_border" href="{% url 'core:pay' 'macs' mac.id %}">
+    <div class="divs">
+      <div style="display: flex;">
+      <img class="img" src="{{ mac.image.url }}" alt="">
+      <div>
+      <p style="margin-top: 35px;" class="card-new2">NEW  <span class="number3">TRADE-IN</span></p>
+      <p class="p">{{ mac.name }}</p>
+      <p class="p2">From {{ mac.price }} ₼</p>
+      </div>
+      </div>
+    </div>
+  </a>
+      </div>
+      {% endfor %}
+
+
+    </div>
+    <button class="btn right" id="rightBtn">❯</button>
+  <hr style="background-color: #7D7D7D; opacity: 0.3; width: 1280px;">
+</div>  
+
+<!-- -------------- -->
+
+
+
+
+
+
+<div>
+<h1 class="h1_start">Mac</h1>
+<hr style="background-color: #7D7D7D; opacity: 0.4; width: 1270px; margin-top: 40px; margin-left: 0px !important;">
+</div>
+
+<!-- ------------------- -->
+
+
+<div style="margin-top: 40px;">
+
+
+
+
+
+
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3">
+         <!-- <div class="accordion" id="accordionExample">
+    <div class="card">
+          <h2 class="mb-0">
+          <button class="button " type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Product type
+          </button>
+          
+        </h2>
+  
+      </div>
+  
+      <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+        <div class="card-body">
+        
+          {% for product_type in product_types %}
+          <input class="checkbox" type="checkbox" id="check">
+          <label class="check" for="check">{{ product_type.name }} ({{ product_types.count }})</label>
+          <br>
+          {% endfor %}
+        </div>
+      </div>
+  <hr style="background-color: #7D7D7D; opacity: 0.3; width: 280px; margin-top: 4px; margin-left: 23px !important;">
+  
+  
+  
+  
+    </div> -->
+      <div class="card">
+          <h2 class="mb-0">
+          <button class="button" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+           Series
+          </button>
+          
+        </h2>
+  
+      </div>
+  
+  
+      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+        <div class="card-body"> 
+          
+          <!-- burdan  -->
+          
+          <a href="?subtype=macpro"> 
+           <label style="color: black;cursor: pointer;font-size: 22px;" onmouseover="this.style.color='#0071e3'"onmouseout="this.style.color='black'"    >
+            MacBook Pro 
+            
+             
+            
+           </label></a>
+
+           <!-- bura kimi copy et -->
+
+
+          <br>
+          <a href="?subtype=macair"> 
+           <label  style="color: black;cursor: pointer;font-size: 22px;" onmouseover="this.style.color='#0071e3'"onmouseout="this.style.color='black'"  class="form-check-label" >
+            MacBook Air   
+           </label></a>
+         
+           <br>
+           
+        </div>
+      </div>
+  <hr style="background-color: #7D7D7D; opacity: 0.3; width: 280px; margin-top: 4px; margin-left: 23px !important;">
+  
+  
+    <div class="card">
+          <h2 class="mb-0">
+          <button class="button "  type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+            Processor
+          </button>
+          
+        </h2>
+  
+      </div>
+  
+  
+      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+        <div class="card-body">
+          
+          
+           <a href="?subtype=appm5"> 
+           <label  style="color: black;cursor: pointer;font-size: 22px;" onmouseover="this.style.color='#0071e3'"onmouseout="this.style.color='black'"  class="form-check-label" >
+            Apple M5 
+           </label></a>
+           <br>  <br>
+             <a href="?subtype=appm4pr"> 
+           <label  style="color: black;cursor: pointer;font-size: 22px;" onmouseover="this.style.color='#0071e3'"onmouseout="this.style.color='black'"  class="form-check-label" >
+            Apple M4 Pro
+           </label></a>
+
+
+ 
+        </div>
+      </div>
+  <hr style="background-color: #7D7D7D; opacity: 0.3; width: 280px; margin-top: 4px; margin-left: 23px !important;">
+
+      <div class="card">
+          <h2 class="mb-0">
+          <button class="button "  type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+            SSD
+          </button>
+          
+        </h2>
+  
+      </div>
+  
+  
+      <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+        <div class="card-body">
+             <a href="?subtype=1TB"> 
+           <label  style="color: black;cursor: pointer;font-size: 22px;" onmouseover="this.style.color='#0071e3'"onmouseout="this.style.color='black'"  class="form-check-label" >
+            1 TB
+           </label></a>
+           <br><br>
+
+             <a href="?subtype=512GB"> 
+           <label  style="color: black;cursor: pointer;font-size: 22px;" onmouseover="this.style.color='#0071e3'"onmouseout="this.style.color='black'"  class="form-check-label" >
+           512 GB
+           </label></a>
+           <br><br>
+             <a href="?subtype=256GB"> 
+           <label  style="color: black;cursor: pointer;font-size: 22px;" onmouseover="this.style.color='#0071e3'"onmouseout="this.style.color='black'"  class="form-check-label" >
+           256 GB
+           </label></a>
+
+        </div>
+      </div>
+  <hr style="background-color: #7D7D7D; opacity: 0.3; width: 280px; margin-top: 4px; margin-left: 23px !important;">
+  
+ <div class="card">
+          <h2 class="mb-0">
+          <button class="button "  type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+            RAM
+          </button>
+          
+        </h2>
+  
+      </div>
+  
+  
+      <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+        <div class="card-body">
+          
+           <a href="?subtype=32GB"> 
+           <label  style="color: black;cursor: pointer;font-size: 22px;" onmouseover="this.style.color='#0071e3'"onmouseout="this.style.color='black'"  class="form-check-label" >
+           32 GB
+           </label></a>
+           <br>
+             <a href="?subtype=24GB"> 
+           <label  style="color: black;cursor: pointer;font-size: 22px;" onmouseover="this.style.color='#0071e3'"onmouseout="this.style.color='black'"  class="form-check-label" >
+           24 GB
+           </label></a>
+           <br>
+            <a href="?subtype=16GB"> 
+           <label  style="color: black;cursor: pointer;font-size: 22px;" onmouseover="this.style.color='#0071e3'"onmouseout="this.style.color='black'"  class="form-check-label" >
+           16 GB
+           </label></a>
+           <br>
+             <a href="?subtype=8GB"> 
+           <label  style="color: black;cursor: pointer;font-size: 22px;" onmouseover="this.style.color='#0071e3'"onmouseout="this.style.color='black'"  class="form-check-label" >
+           8 GB
+           </label></a>
+  
+ 
+        </div>
+      </div>
+  <hr style="background-color: #7D7D7D; opacity: 0.3; width: 280px; margin-top: 4px; margin-left: 23px !important;">
+
+  <div class="card">
+          <h2 class="mb-0">
+          <button class="button "  type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+            Color
+          </button>
+          
+        </h2>
+  
+      </div>
+  
+  
+      <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
+        <div class="card-body">
+           
+            <a href="?subtype=Space Black"> 
+           <label  style="color: black;cursor: pointer;font-size: 22px;" onmouseover="this.style.color='#0071e3'"onmouseout="this.style.color='black'"  class="form-check-label" >
+           Space Black
+           </label></a>
+           <br><br>
+            <a href="?subtype=Silver"> 
+           <label  style="color: black;cursor: pointer;font-size: 22px;" onmouseover="this.style.color='#0071e3'"onmouseout="this.style.color='black'"  class="form-check-label" >
+           Silver
+           </label></a>
+           <br><br>
+            <a href="?subtype=Space Gray"> 
+           <label  style="color: black;cursor: pointer;font-size: 22px;" onmouseover="this.style.color='#0071e3'"onmouseout="this.style.color='black'"  class="form-check-label" >
+           Space Gray
+           </label></a>
+  
+
+        </div>
+      </div>
+  <hr style="background-color: #7D7D7D; opacity: 0.3; width: 280px; margin-top: 4px; margin-left: 23px !important;">
+  
+
+
+   <div class="card">
+          <h2 class="mb-0">
+          <button class="button "  type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven">
+            Diagonal size
+          </button>
+          
+        </h2>
+  
+      </div>
+  
+  
+      <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionExample">
+        <div class="card-body">
+           <a href="?subtype=16.2"> 
+           <label  style="color: black;cursor: pointer;font-size: 22px;" onmouseover="this.style.color='#0071e3'"onmouseout="this.style.color='black'"  class="form-check-label" >
+           16.2
+           </label></a>
+           <br><br>
+             <a href="?subtype=15"> 
+           <label  style="color: black;cursor: pointer;font-size: 22px;" onmouseover="this.style.color='#0071e3'"onmouseout="this.style.color='black'"  class="form-check-label" >
+           15
+           </label></a>
+           <br><br>
+           <a href="?subtype=14.2"> 
+           <label  style="color: black;cursor: pointer;font-size: 22px;" onmouseover="this.style.color='#0071e3'"onmouseout="this.style.color='black'"  class="form-check-label" >
+           14.2
+           </label></a>
+              <br><br>
+           <a href="?subtype=13"> 
+           <label  style="color: black;cursor: pointer;font-size: 22px;" onmouseover="this.style.color='#0071e3'"onmouseout="this.style.color='black'"  class="form-check-label" >
+           13
+           </label></a>
+          
+  
+
+  
+        </div>
+      </div>
+  <hr style="background-color: #7D7D7D; opacity: 0.3; width: 280px; margin-top: 4px; margin-left: 23px !important;">
+
+
+ 
+   
+ 
+<div class="card">
+          <h2 class="mb-0">
+          <button class="button "  type="button" data-toggle="collapse" data-target="#collapseTwelve" aria-expanded="true" aria-controls="collapseTwelve">
+            Price, ₼
+          </button>
+          
+        </h2>
+  
+      </div>
+  
+  
+      <div id="collapseTwelve" class="collapse" aria-labelledby="headingTwelve" data-parent="#accordionExample">
+        <div class="card-body">
+          <p class="pincard">Highest price 18299 ₼</p>
+          <br>
+          <form action="" method="get">
+              <div style="display: flex;">
+          <input name="min_price" class="inputincard" placeholder="From" type="number">
+          <input name="max_price" style="margin-left: 10px;" class="inputincard2" placeholder="To" type="number">
+          <br><br>
+        </div>
+          <button class="salam" style="border: none;outline: none;background-color: #0071e3;color: white;padding: 5px 10px; margin-top: 10px;">Daxil et</button>
+          </form>
+        </div>
+      </div>
+  <hr style="background-color: #7D7D7D; opacity: 0.3; width: 280px; margin-top: 4px; margin-left: 23px !important;">
+
+
+
+
+
+      </div>
+      <div class="col-md-9">
+        <p class="products-p">{{count}} Products</p>
+        <div class="row">
+          {% for mac in macs %}
+          <div class="col-md-4">
+            <div class="bordersdiv">
+    <div class="imgborder">
+      <a href="{% url 'core:pay' 'macs' mac.id %}">
+        <img class="imginborder" src="{{mac.image.url}}" alt="">
+      </a>
+    </div>
+    <p class="numberinborder">0 | 0 | 18 <span class="number2inborder">-10% WITH VISA</span> <span class="number3inborder">TRADE-IN</span></p>
+
+  
+    
+    <a class="ainborder" href="{% url 'core:pay' 'macs' mac.id %}">
+    <p class="pinborder">{{ mac.name }}</p>
+    </a>
+
+    <p class="p2inborder">{{ mac.price }} ₼ <br>{{mac.description}}</p>
+
+    <a href="{% url 'core:pay' 'macs' mac.id %}">
+      <button class="button2" style="margin-top: -10px;">Buy now</button>
+      </a>
+  </div>
+          </div>
+          {% endfor %}
+
+
+
+          
+        </div>
+      </div>
+    </div>
+ 
+  </div>
+  
+  
+  
+</div>  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+<!-- FOOTER START -->
+
+
+
+{% block scripts %}
+
+
+  <script>
+    const track = document.getElementById('track');
+    const btnLeft = document.getElementById('leftBtn');
+    const btnRight = document.getElementById('rightBtn');
+
+    btnLeft.addEventListener('click', () => {
+      track.scrollBy({ left: -300, behavior: 'smooth' });
+    });
+
+    btnRight.addEventListener('click', () => {
+      track.scrollBy({ left: 300, behavior: 'smooth' });
+    });
+  </script>
+
+{% endblock %}

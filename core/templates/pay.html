@@ -1,0 +1,472 @@
+{% extends 'base.html' %}
+ {% load static %}
+
+ {% block css %}
+  <link rel="stylesheet" href="{% static 'css/pay.css' %}">
+  {% endblock %}
+ {% block content %} 
+  
+  
+  
+  
+
+
+<!-- navbar end -->
+
+<div class="carousel-container">
+    <button class="btn left" id="leftBtn">❮</button>
+    <div class="carousel-track" id="track">
+    {% for model, product in new_products %}
+
+      <div class="item">
+        <a class="a_border" href="{% url 'core:pay' model product.id %}">
+    <div class="divs">
+      <div style="display: flex;">
+      <img class="img" src="{{ product.image.url }}" alt="">
+      <div>
+      <p style="margin-top: 35px;" class="card-new2">NEW  <span class="number3">TRADE-IN</span></p>
+      <p class="p">{{ product.name }}</p>
+      <p class="p2">From {{ product.price }} ₼</p>
+      </div>
+      </div>
+    </div>
+  </a>
+      </div>
+{% endfor %}
+
+
+
+    </div>
+    <button class="btn right" id="rightBtn">❯</button>
+  <hr style="background-color: #7D7D7D; opacity: 0.3; width: 1280px;">
+</div>  
+
+<!-- -------------- -->
+
+
+
+
+
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-8">
+            <img class="pay-img" src="{{ product.image.url }}" alt="">
+
+        </div>
+		<div class="col-md-4">
+        <p style="margin-top: 20px;" class="numberinborder">0 | 0 | 18 <span class="number2inborder">-10% WITH VISA</span> <span class="number3inborder"">TRADE-IN</span></p>
+        <h1 class="pay-h1">{{ product.name }}</h1>
+        <p class="pay-col">SKU: Z1DB000GV</p>
+        <h2 class="pay-h2">{{ product.price }} ₼ <br><span class="or">or</span> <br><span class="pay-span">{{product.description}}</span></h2>
+        <button  data-toggle="modal" data-target=".bd-example-modal-lg" class="pay-a">Apply for a credit <svg style="margin-left: -5px;" width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg" class="product-price_button-icon" stroke-color="currentColor" fill-color="currentColor" data-v-e79eec49=""><path d="M9.10742 14.1333L13.4835 10.3125L9.10742 6.49167L10.458 5.3125L16.1846 10.3125L10.458 15.3125L9.10742 14.1333Z" fill="currentColor"></path></svg></button>
+        
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <h1 class="credit-h1">Credit purchase</h1>
+      <div style="display: flex; margin-top: 25px;">
+        <img class="credit-img" src="{{ product.image.url }}" alt="">
+        <h2 class="credit-h2">{{ product.name }}</h2>
+        <div style="display: grid;">
+        <div class="qty-box2">
+        <button class="qty-btn2">−</button>
+        <span class="qty-value2">1</span>
+        <button class="qty-btn2">+</button>
+        </div>
+        <a class="credit-a" href="">Remove</a>
+        </div>
+        <h3 class="credit-h3">{{ product.price }} ₼</h3>      
+      </div>
+        <hr style="background-color: #7D7D7D; opacity: 0.2; width: 890px; margin-top: 10px; height: 0.5px; margin-left: 57px !important;">
+        <h4 class="credit-h4">Credit programs</h4>    
+        <div>
+        <div class="container-fluid">
+	    <div class="row">
+		<div class="col-md-4">
+        <p class="credit-p">Bank and credit product</p> 
+		</div>
+		<div class="col-md-4">
+        <p style="text-align: center;" class="credit-p">Credit conditions</p> 
+
+		</div>
+		<div class="col-md-4">
+        <p style="text-align: right; margin-left: 0px !important; margin-right: 70px;" class="credit-p">Monthly payment</p> 
+
+		</div>
+        <hr style="background-color: #7D7D7D; opacity: 0.2; width: 890px; margin-top: 10px; height: 0.px; margin-left: 57px !important;">
+	</div>
+
+    <div class="form-check">
+  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+  <label class="form-check-label" for="flexRadioDefault1">
+  </label>
+  <div style="display: flex;">
+  <div class="div-img">
+  <img class="credit-img2" src="https://cdn0.it4profit.com/s3size/el:t/rt:fill/plain/s3://cms/credit/dc/53/dc53e16d9978dc19f9f0f5587c271c71/group_2087329230.webp" alt="">
+  </div>
+  <p class="credit-h5">Installment from Leobank <br></p>
+<div class="dropdown2">
+  <select>
+    <option selected>24 payments</option>
+    <option>18 payments</option>
+    <option>12 payments</option>
+    <option>9 payments</option>
+    <option>6 payments</option>
+  </select>
+</div>
+        <h3 class="credit-h3h3">{{ product.price }} ₼</h3>      
+</div>
+
+    <hr style="background-color: #7D7D7D; opacity: 0.2; width: 890px; margin-top: 10px; height: 0.px; margin-left: 20px !important;">
+    <div style="display: flex;">
+    <h4 class="credit-h4h4">Total order amount: <br>{{ product.price }} ₼</h4>
+    <button class="credit-button">Buy now</button>
+    <a href="{% url 'core:financing' %}">
+    <button class="credit-button2">Start financing</button>
+    </a>
+
+    </div>
+</div>
+<!-- <div class="form-check">
+  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+  <label class="form-check-label" for="flexRadioDefault2">
+    Default checked radio
+  </label>
+</div> -->
+
+</div>
+        
+        </div> 
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h3 class="pay-h3">Color</h3>
+
+        <div style="display: flex;">
+            
+                   
+        <a href="" style="display: flex; align-items: center;">
+        <div class="pay-black" style="background-color: {{ product.color }} !important;"></div> <span style="color: black; margin-left: 10px;">{{product.color}}</span>
+        </a>
+
+        </div>
+
+        <h3 class="pay-h3">Chip</h3>
+
+
+        <a class="pay-a2" href="">
+        <div class="pay-btnactive">{{ product.chip }}</div>
+        </a>
+<!--  -->
+        <h3 class="pay-h3">Total SSD storage capacity</h3>
+        <a class="pay-a2" href="">
+        <div class="pay-btnactive">{{ product.ssd}}</div>
+        </a>
+
+<!--  -->
+        <h3 class="pay-h3">Diagonal size</h3>
+        <a class="pay-a2" href="">
+        <div class="pay-btnactive">{{ product.size }}"</div>
+        </a>
+<!--  -->
+        <h3 class="pay-h3">RAM</h3>
+
+
+        <a class="pay-a2" href="">
+        <div class="pay-btnactive">{{ product.ram }}</div>
+        </a>
+<!--  -->
+        <h3 class="pay-h3">Trade-in</h3>
+        <p class="pay-p">Get up to 250 AZN towards your new device</p>
+        <a class="pay-learn" href="{% url 'core:trade_in' %}">
+        <button class="pay-learn">Learn more about Trade-in <svg style="margin-left: -5px;" width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg" class="product-price_button-icon" stroke-color="currentColor" fill-color="currentColor" data-v-e79eec49=""><path d="M9.10742 14.1333L13.4835 10.3125L9.10742 6.49167L10.458 5.3125L16.1846 10.3125L10.458 15.3125L9.10742 14.1333Z" fill="currentColor"></path></svg></button>
+        </a>
+        <br>
+        <a class="pay-buttona" href="{% url 'core:trade_in' %}">
+            <button class="pay-button">Start Trade-in</button>
+        </a>
+        <a  class="pay-button2a" href="">
+            <button class="pay-button2">No Trade-in</button>
+        </a>
+<!--  -->
+        <h3 class="pay-h3">Quantity</h3>
+        <div class="qty-box">
+        <button class="qty-btn">−</button>
+        <span class="qty-value">1</span>
+        <button class="qty-btn">+</button>
+        </div>
+<!--  -->
+        <h3 class="pay-h3">Get it fast</h3>
+        <h4 class="pay-h4"><svg style="margin-top: -5px;" data-v-e79eec49="" width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg" class="product-delivery_item-icon" stroke-color="currentColor" fill-color="currentColor"><path d="M13.6345 16.2622H3.91226C3.08885 16.2622 2.41906 15.5923 2.41906 14.7689L2.41895 8.35645H3.15263V14.7689C3.15263 15.1877 3.49339 15.5284 3.91215 15.5284H13.6347C14.0534 15.5284 14.3942 15.1878 14.3942 14.7689L14.3943 8.35645H15.128V14.7689C15.128 15.5923 14.4581 16.2622 13.6347 16.2622H13.6345Z" fill="currentColor"></path><path d="M7.05632 8.92888C5.90522 8.92888 4.96875 7.99229 4.96875 6.84131H5.70244C5.70244 7.58775 6.30976 8.19508 7.05632 8.19508C7.80288 8.19508 8.41021 7.58775 8.41021 6.84131H9.14389C9.14389 7.99229 8.20742 8.92888 7.05632 8.92888Z" fill="currentColor"></path><path d="M10.4977 8.93068C9.34663 8.93068 8.41016 7.9941 8.41016 6.84311V5.31885H9.14384V6.84311C9.14384 7.58956 9.75117 8.19688 10.4977 8.19688C11.2443 8.19688 11.8516 7.58956 11.8516 6.84311H12.5853C12.5853 7.9941 11.6488 8.93068 10.4977 8.93068Z" fill="currentColor"></path><path d="M13.9396 8.92958C12.7885 8.92958 11.8521 7.99299 11.8521 6.84201V5.31774H12.5857V6.84201C12.5857 7.58845 13.1931 8.19578 13.9396 8.19578C14.6862 8.19578 15.2936 7.58845 15.2936 6.84201V5.42846L14.0914 3.62064H3.4633L2.26103 5.42834V6.84189C2.26103 7.58834 2.86847 8.19566 3.61503 8.19566C4.36159 8.19566 4.96891 7.58834 4.96891 6.84189V5.31763H5.7026V6.84189C5.7026 7.99299 4.76613 8.92947 3.61503 8.92947C2.46382 8.92947 1.52734 7.99288 1.52734 6.84189V5.31763C1.52734 5.24534 1.54868 5.17462 1.58868 5.1144L2.9611 3.05051C3.02903 2.94817 3.14377 2.88672 3.26656 2.88672H14.2879C14.4107 2.88672 14.5254 2.94817 14.5934 3.05051L15.966 5.11451C16.0061 5.17473 16.0273 5.24545 16.0273 5.31774V6.84201C16.0273 7.99299 15.0909 8.92958 13.9397 8.92958H13.9396Z" fill="currentColor"></path><path d="M1.89355 4.94727H15.6601V5.68107H1.89355V4.94727Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M10.4416 11.6258H6.87582C6.77735 11.6258 6.69753 11.7056 6.69753 11.804V15.3698C6.69753 15.4683 6.77735 15.5481 6.87582 15.5481H10.4416C10.54 15.5481 10.6199 15.4683 10.6199 15.3698V11.804C10.6199 11.7056 10.54 11.6258 10.4416 11.6258ZM6.87582 10.9126C6.38349 10.9126 5.98438 11.3117 5.98438 11.804V15.3698C5.98438 15.8621 6.38349 16.2612 6.87582 16.2612H10.4416C10.9339 16.2612 11.333 15.8621 11.333 15.3698V11.804C11.333 11.3117 10.9339 10.9126 10.4416 10.9126H6.87582Z" fill="currentColor"></path></svg> Pick up from store <br><span class="pay-pickup"">Available for pickup. Choose a convenient location. <br></span><a class="pay-pickupdepartment" href="">Pickup department</a><span></span></h4>
+        <h4 style="margin-top: -5px;" class="pay-h4"><svg style="margin-top: -5px;" width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg" class="product-delivery_item-icon" stroke-color="currentColor" fill-color="currentColor" data-v-e79eec49=""><path d="M1.89353 10.3465C1.43772 10.3465 1.09151 10.2282 0.854906 9.99158C0.618302 9.75498 0.5 9.40877 0.5 8.95296V2.24628C0.5 1.78699 0.618302 1.43904 0.854906 1.20244C1.09151 0.965836 1.43772 0.847534 1.89353 0.847534H9.40919C9.865 0.847534 10.2112 0.967576 10.4478 1.20766C10.6844 1.44774 10.8027 1.79395 10.8027 2.24628V9.52186L10.1608 9.89764V2.25672C10.1608 2.00272 10.0946 1.81309 9.96242 1.68783C9.8302 1.55909 9.64057 1.49472 9.39353 1.49472H1.90397C1.65344 1.49472 1.46381 1.55909 1.33507 1.68783C1.20633 1.81309 1.14196 2.00272 1.14196 2.25672V8.9373C1.14196 9.19131 1.20633 9.38268 1.33507 9.51142C1.46381 9.64016 1.65344 9.70453 1.90397 9.70453H2.89562V10.3465H1.89353ZM10.4322 4.38616V3.74419H12.2902C12.5303 3.74419 12.7356 3.77725 12.9061 3.84336C13.08 3.90947 13.2383 4.01907 13.381 4.17217L15.1555 6.17634C15.2843 6.32248 15.373 6.46688 15.4217 6.60954C15.4739 6.7522 15.5 6.93487 15.5 7.15756V8.95296C15.5 9.40877 15.3817 9.75498 15.1451 9.99158C14.9085 10.2282 14.5623 10.3465 14.1065 10.3465H13.3601V9.70453H14.0908C14.3413 9.70453 14.531 9.64016 14.6597 9.51142C14.7919 9.38268 14.858 9.19131 14.858 8.9373V7.1419C14.858 7.04099 14.8389 6.94009 14.8006 6.83918C14.7624 6.7348 14.7067 6.64085 14.6336 6.55735L12.9426 4.66277C12.8452 4.55491 12.7408 4.48184 12.6294 4.44357C12.5181 4.40529 12.3876 4.38616 12.238 4.38616H10.4322ZM11.7422 7.1419C11.6239 7.1419 11.5282 7.1071 11.4551 7.03751C11.3855 6.96792 11.3507 6.87398 11.3507 6.75568V4.91852H12.1284C12.2189 4.91852 12.2989 4.93765 12.3685 4.97593C12.4381 5.01072 12.5007 5.05769 12.5564 5.11685L14.1117 6.86528C14.15 6.90703 14.1795 6.94879 14.2004 6.99054C14.2248 7.03229 14.237 7.08275 14.237 7.1419H11.7422ZM4.27349 11.834C3.95338 11.834 3.6611 11.7557 3.39666 11.5991C3.1357 11.4425 2.92693 11.232 2.77035 10.9676C2.61378 10.7066 2.53549 10.4161 2.53549 10.096C2.53549 9.77586 2.61378 9.48532 2.77035 9.22436C2.92693 8.95992 3.1357 8.75115 3.39666 8.59806C3.6611 8.44148 3.95338 8.36319 4.27349 8.36319C4.5936 8.36319 4.88413 8.44148 5.14509 8.59806C5.40605 8.75115 5.61482 8.95992 5.7714 9.22436C5.92798 9.48532 6.00626 9.77586 6.00626 10.096C6.00626 10.4161 5.92798 10.7066 5.7714 10.9676C5.61482 11.232 5.40605 11.4425 5.14509 11.5991C4.88413 11.7557 4.5936 11.834 4.27349 11.834ZM4.27349 11.2755C4.48921 11.2755 4.6858 11.2216 4.86326 11.1137C5.04419 11.0093 5.18685 10.8667 5.29123 10.6857C5.39562 10.5083 5.44781 10.3117 5.44781 10.096C5.44781 9.87676 5.39562 9.67843 5.29123 9.50098C5.18685 9.32353 5.04419 9.18261 4.86326 9.07822C4.6858 8.97036 4.48921 8.91643 4.27349 8.91643C4.05428 8.91643 3.85595 8.97036 3.6785 9.07822C3.50104 9.18261 3.35839 9.32353 3.25052 9.50098C3.14266 9.67843 3.08873 9.87676 3.08873 10.096C3.08873 10.3117 3.14266 10.5083 3.25052 10.6857C3.35839 10.8667 3.50104 11.0093 3.6785 11.1137C3.85595 11.2216 4.05428 11.2755 4.27349 11.2755ZM11.8622 11.834C11.5456 11.834 11.255 11.7557 10.9906 11.5991C10.7262 11.4425 10.5157 11.232 10.3591 10.9676C10.2025 10.7066 10.1242 10.4161 10.1242 10.096C10.1242 9.77586 10.2025 9.48532 10.3591 9.22436C10.5157 8.95992 10.7262 8.75115 10.9906 8.59806C11.255 8.44148 11.5456 8.36319 11.8622 8.36319C12.1823 8.36319 12.4729 8.44148 12.7338 8.59806C12.9983 8.75115 13.207 8.95992 13.3601 9.22436C13.5167 9.48532 13.595 9.77586 13.595 10.096C13.595 10.4161 13.5167 10.7066 13.3601 10.9676C13.207 11.232 12.9983 11.4425 12.7338 11.5991C12.4729 11.7557 12.1823 11.834 11.8622 11.834ZM11.8622 11.2755C12.0814 11.2755 12.2797 11.2216 12.4572 11.1137C12.6347 11.0093 12.7756 10.8667 12.88 10.6857C12.9843 10.5083 13.0365 10.3117 13.0365 10.096C13.0365 9.87676 12.9826 9.67843 12.8747 9.50098C12.7704 9.32353 12.6294 9.18261 12.452 9.07822C12.2745 8.97036 12.0779 8.91643 11.8622 8.91643C11.6465 8.91643 11.4499 8.97036 11.2724 9.07822C11.095 9.18261 10.9523 9.32353 10.8445 9.50098C10.7366 9.67843 10.6827 9.87676 10.6827 10.096C10.6827 10.3117 10.7366 10.5083 10.8445 10.6857C10.9523 10.8667 11.095 11.0093 11.2724 11.1137C11.4499 11.2216 11.6465 11.2755 11.8622 11.2755ZM5.70355 10.3465V9.70453H10.4896V10.3465H5.70355Z" fill="black"></path></svg> Shipping</h4>
+<!--  -->
+        <div class="accordion" id="accordionExample">
+    <div class="card">
+          <h2 class="mb-0">
+            <hr style="background-color: #7D7D7D; opacity: 0.2; width: 280px; margin-bottom: -5px; margin-left: 2px !important; height: 0.8px;">
+          <button class="button " type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            10% save with VISA card
+          </button>
+          
+        </h2>
+  
+      </div>
+  
+      <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+        <div class="card-body">
+        <p class="cardp">Pay with a VISA card at an iSpace offline store and get a 10% save. Valid only when paying with Apple Pay or Google Pay. The offer cannot be combined with installment plans.</p>
+        <a class="carda" href="{% url 'core:list' %}">View all products</a>
+        </div>
+      </div>
+  <hr style="background-color: #7D7D7D; opacity: 0.2; width: 280px; margin-top: 10px; height: 1.3px; margin-left: 2px !important;">
+    </div>
+    <!--  -->
+    <div class="card">
+          <h2 class="mb-0">        
+          <button class="button" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+            Financing options
+          </button>
+          
+        </h2>
+  
+      </div>
+  
+  
+      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+        <div class="card-body"> 
+        <p class="cardp">Check out our financing options.</p>
+        <a class="carda" href="{% url 'core:financing' %  }">Learn more</a>
+        </div>
+      </div>
+  <hr style="background-color: #7D7D7D; opacity: 0.2; width: 280px; margin-top: 10px; height: 1.3px; margin-left: 2px !important;">
+<!--  -->
+  <div class="card">
+          <h2 class="mb-0">        
+          <button class="button" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+            iSupport service and warranty
+          </button>
+          
+        </h2>
+  
+      </div>
+  
+  
+      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+        <div class="card-body"> 
+        <p class="cardp">Technical support for all Apple products.</p>
+        <a class="carda" href="{% url 'core:warranty' %}">Learn more</a>
+        </div>
+      </div>
+  <hr style="background-color: #7D7D7D; opacity: 0.2; width: 280px; margin-top: 10px; height: 1.3px; margin-left: 2px !important;">
+<!--  -->
+  <div class="card">
+          <h2 class="mb-0">        
+          <button class="button" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+            Trade-in and save
+          </button>
+          
+        </h2>
+  
+      </div>
+  
+  
+      <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+        <div class="card-body"> 
+        <p class="cardp">Bring your old iPhone. Get a discount on new Apple equipment.</p>
+        <a class="carda" href="{% url 'core:trade_in' %}  ">Learn more about Trade-in</a>
+        </div>
+      </div>
+  <hr style="background-color: #7D7D7D; opacity: 0.2; width: 280px; margin-top: 10px; height: 1.3px; margin-left: 2px !important;">
+  <!--  -->
+  <div class="card">
+          <h2 class="mb-0">        
+          <button class="button" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+            Shipping details
+          </button>
+          
+        </h2>
+  
+      </div>
+  
+  
+      <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+        <div class="card-body"> 
+        <p class="cardp">Free shipping for orders over 300 AZN, fast delivery in Baku for online payments.</p>
+        <a class="carda" href="{% url 'core:stores' %}">Learn more</a>
+        </div>
+      </div>
+  <hr style="background-color: #7D7D7D; opacity: 0.2; width: 280px; margin-top: 10px; height: 1.3px; margin-left: 2px !important;">
+<!--  -->
+  <a href="">
+  <h4 class="share"><svg style="margin-top: -5px; margin-left: 3px;" data-v-e79eec49="" data-v-0731e9ae="" width="14" height="17" viewBox="0 0 14 17" fill="none" xmlns="http://www.w3.org/2000/svg" class="" stroke-color="currentColor" fill-color="currentColor"><path d="M2.85534 16.5002C2.1551 16.5002 1.62752 16.3228 1.27261 15.9679C0.917692 15.6178 0.740234 15.095 0.740234 14.3995V7.03981C0.740234 6.34437 0.917692 5.82159 1.27261 5.47147C1.62752 5.11655 2.1551 4.93909 2.85534 4.93909H5.27261V5.82399H2.87692C2.46925 5.82399 2.1575 5.9319 1.94167 6.14773C1.73064 6.35876 1.62513 6.67291 1.62513 7.09017V14.3492C1.62513 14.7664 1.73064 15.0806 1.94167 15.2916C2.1575 15.5074 2.46925 15.6154 2.87692 15.6154H11.1215C11.5196 15.6154 11.8266 15.5074 12.0424 15.2916C12.263 15.0806 12.3733 14.7664 12.3733 14.3492V7.09017C12.3733 6.67291 12.263 6.35876 12.0424 6.14773C11.8266 5.9319 11.5196 5.82399 11.1215 5.82399H8.72585V4.93909H11.1431C11.8434 4.93909 12.3709 5.11655 12.7258 5.47147C13.0808 5.82638 13.2582 6.34916 13.2582 7.03981V14.3995C13.2582 15.0854 13.0808 15.6058 12.7258 15.9607C12.3709 16.3204 11.8434 16.5002 11.1431 16.5002H2.85534ZM6.99923 10.9607C6.87932 10.9607 6.77621 10.9199 6.68987 10.8384C6.60354 10.752 6.56038 10.6489 6.56038 10.529V2.78082L6.59635 1.73046L5.94167 2.39952L4.71865 3.67291C4.64191 3.76403 4.54119 3.8096 4.41649 3.8096C4.30139 3.8096 4.20546 3.77123 4.12872 3.69449C4.05678 3.61775 4.02081 3.52422 4.02081 3.41391C4.02081 3.3084 4.06158 3.21247 4.14311 3.12614L6.68268 0.651323C6.73544 0.593769 6.7858 0.5554 6.83376 0.536215C6.88652 0.512235 6.94167 0.500244 6.99923 0.500244C7.05678 0.500244 7.10954 0.512235 7.1575 0.536215C7.21026 0.5554 7.26302 0.593769 7.31577 0.651323L9.84815 3.12614C9.93448 3.21247 9.97764 3.3084 9.97764 3.41391C9.97764 3.52422 9.93927 3.61775 9.86254 3.69449C9.7858 3.77123 9.68987 3.8096 9.57477 3.8096C9.45486 3.8096 9.35414 3.76403 9.27261 3.67291L8.04959 2.39952L7.4093 1.73046L7.43808 2.78082V10.529C7.43808 10.6489 7.39491 10.752 7.30858 10.8384C7.22225 10.9199 7.11913 10.9607 6.99923 10.9607Z" fill="currentColor"></path></svg> Share</h4>
+  </a>
+  <div style="display: flex; margin-top: 20px;">
+    <a href="">
+    <svg class="pay-svg" style="margin-left: 3px;" width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="social-links_icon" stroke-color="currentColor" fill-color="currentColor" data-v-0731e9ae="" data-v-e79eec49=""><path fill-rule="evenodd" clip-rule="evenodd" d="M16 8C16 12.4183 12.4183 16 8 16C3.58172 16 0 12.4183 0 8C0 3.58172 3.58172 0 8 0C12.4183 0 16 3.58172 16 8ZM8.28668 5.90595C7.50857 6.2296 5.95342 6.89946 3.62126 7.91555C3.24256 8.06615 3.04417 8.21348 3.02611 8.35754C2.99559 8.601 3.30047 8.69687 3.71565 8.82741C3.77212 8.84517 3.83064 8.86357 3.89062 8.88307C4.29909 9.01585 4.84855 9.17118 5.13419 9.17735C5.3933 9.18295 5.68249 9.07613 6.00176 8.85689C8.18077 7.386 9.30559 6.64254 9.37621 6.62651C9.42603 6.6152 9.49507 6.60099 9.54184 6.64256C9.58862 6.68414 9.58402 6.76288 9.57907 6.784C9.54886 6.91276 8.35208 8.0254 7.73275 8.60119C7.53967 8.78069 7.40272 8.90801 7.37472 8.93709C7.312 9.00223 7.24809 9.06385 7.18665 9.12307C6.80718 9.48889 6.52261 9.76321 7.20241 10.2112C7.52909 10.4265 7.79051 10.6045 8.05131 10.7821C8.33612 10.9761 8.62019 11.1695 8.98774 11.4104C9.08139 11.4718 9.17082 11.5356 9.25793 11.5977C9.58938 11.834 9.88717 12.0463 10.2551 12.0124C10.4688 11.9928 10.6896 11.7917 10.8018 11.1922C11.0668 9.77543 11.5878 6.70564 11.7081 5.44065C11.7187 5.32982 11.7054 5.18798 11.6948 5.12572C11.6841 5.06345 11.6618 4.97474 11.5809 4.90907C11.4851 4.83129 11.3371 4.81489 11.2709 4.81606C10.97 4.82136 10.5084 4.98188 8.28668 5.90595Z" fill="currentColor"></path></svg>   
+    </a>
+
+    <a href="">
+    <svg class="pay-svg" style="margin-left: 15px;" width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="social-links_icon" stroke-color="currentColor" fill-color="currentColor" data-v-0731e9ae="" data-v-e79eec49=""><path d="M7.99984 0C3.58169 0 0 3.59492 0 8.02939C0 11.7948 2.58299 14.9546 6.0674 15.8224V10.4832H4.41783V8.02939H6.0674V6.97208C6.0674 4.2392 7.29969 2.97248 9.97292 2.97248C10.4798 2.97248 11.3543 3.07236 11.7121 3.17193V5.39607C11.5233 5.37616 11.1953 5.3662 10.7879 5.3662C9.47629 5.3662 8.96942 5.86499 8.96942 7.16157V8.02939H11.5825L11.1335 10.4832H8.96942V16C12.9306 15.5198 16 12.1347 16 8.02939C15.9997 3.59492 12.418 0 7.99984 0Z" fill="currentColor"></path></svg>
+  </a>
+</div>
+	</div>
+</div>
+
+
+
+
+<!-- ----------- -->
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="text-align: center; display: flex; justify-content: center;">
+    <div style="margin-top: 50px;" class="divv">
+        <h1 class="divv-h1">  {{ product.name }}</h1>
+        <a class="pay-comparemodels" href="">
+        </a>
+    </div>
+</div>
+
+
+
+<!-- ----------- -->
+
+
+
+<div style="margin-top: 30px;">
+    <div class="accordion" id="accordionExample">
+    <div class="card">
+          <h2 class="mb-0">
+          <button style="margin-left: 30px;" class="button" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Overwiev
+          </button>
+          
+        </h2>
+  
+      </div>
+  
+      <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+        <div class="card-body">
+        <div class="container-fluid">
+	<div class="row">
+		<div class="col-md-4">
+            <h3 style="font-size: 25px; font-weight: 500;" class="pay-h3">Warranty</h3>
+		</div>
+		<div class="col-md-4">
+            <h3 style="font-weight: 450;" class="pay-h3">Warranty Products Returnable</h3>
+            <h3 style="font-weight: 450;" class="pay-h3">Warranty Term (month)</h3>
+            <h3 style="font-weight: 450;" class="pay-h3">Warranty Validation Criteria</h3>
+		</div>
+		<div class="col-md-4">
+            <h3 style="font-weight: 450;" class="pay-h3">Yes</h3>
+            <h3 style="font-weight: 450;" class="pay-h3">12 month(s)</h3>
+            <h3 style="font-weight: 450;" class="pay-h3">Serial Number</h3>
+		</div>
+	</div>
+</div>
+        </div>
+      </div>
+  <hr style="background-color: #7D7D7D; opacity: 0.2; width: 1170px; margin-top: 10px; height: 1.3px; margin-left: 30px !important;">
+    </div>
+</div>
+
+<!-- -------------------- -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- FOOTER START -->
+
+
+
+
+
+
+
+
+
+<script>
+    const minus = document.querySelector('.qty-box .qty-btn:first-child', '.qty-box2 .qty-btn2:first-child');
+    const plus = document.querySelector('.qty-box .qty-btn:last-child', '.qty-box2 .qty-btn2:last-child');
+    const value = document.querySelector('.qty-value', '.qty-value2');
+
+    minus.addEventListener('click', () => {
+        let v = parseInt(value.textContent);
+        if (v > 1) value.textContent = v - 1;
+    });
+
+    plus.addEventListener('click', () => {
+        let v = parseInt(value.textContent);
+        value.textContent = v + 1;
+    });
+</script>
+
+
+
+
+
+
+
+  <script>
+    const track = document.getElementById('track');
+    const btnLeft = document.getElementById('leftBtn');
+    const btnRight = document.getElementById('rightBtn');
+
+    btnLeft.addEventListener('click', () => {
+      track.scrollBy({ left: -300, behavior: 'smooth' });
+    });
+
+    btnRight.addEventListener('click', () => {
+      track.scrollBy({ left: 300, behavior: 'smooth' });
+    });
+  </script>
+
+{% endblock %}

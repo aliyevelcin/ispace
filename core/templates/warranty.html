@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+ {% load static %}
+  {% block css %}
+  <link rel="stylesheet" href="{% static 'css/warranty.css' %}">
+  {% endblock %}
+ {% block content %}
+<!-- navbar end -->
+
+
+
+<div style="margin-left: 45px;">
+    <h3 class="h3">Warranty Terms and Conditions</h3>
+    <p class="p3">The product warranty period is 12 months or 90 days.<br><br>Any product you purchase may be returned for 14 days from the date of sale, provided it has not been used in any way, the box (packaging) has not been opened, and no activation has taken place.<br><br>Software sold and delivered with your Apple product is not included in the warranty. The terms of the software can be found in the iSpace license agreement.<br><br>The Service Center will repair the manufacturing defects indicated by it free of charge within the warranty period. The maximum time for elimination of defects may not exceed 14-36 working days from the date the product is handed over to the service center. Replaced parts become the property of the manufacturer.</p>
+    <h4 class="h4">Warranty 12 months applies to:</h4>
+    <p class="p3">- Keyboards
+        <br>
+- Apple Watch
+<br>
+- AirPods
+<br>
+- Adapters*
+<br>
+- Mouse
+<br>
+- Apple Pencil
+<br>
+- Apple TV</p>
+
+<p class="p3">* The Shop and Service Center are not responsible for the safety of the information and software on the client's computer or device. Software reinstallation (installation) and recovery are not included in the list of works provided by the warranty.<br><br>* Spare parts for devices requiring repair are supplied by Apple on a special-order basis according to each product's serial number. The delivery time for the part to our country may vary between 14 and 36 days.</p>
+<h4 class="h4">Warranty 90 days applies to:</h4>
+<p class="p3">- All types of cables
+        <br>
+- Folio Case
+<br>
+- Apple Watch straps
+<br>
+- EarPods
+<br>
+- Other accessories
+<br>
+- An additional part replaced under warranty service
+</p>
+
+<h3 class="h3">Warranty Services Are Not Available:</h3>
+<p class="p3">- If erased, damaged, or made corrections to the original serial number;
+<br><br>
+- If the original serial number on the product is erased, damaged, or mutilated;
+<br><br>
+- In case of violation of the rules of use, storage, and transportation of products;
+<br><br>
+- In the presence of mechanical damage, traces of steam, liquids, chemicals, foreign bodies, insects, etc.;
+<br><br>
+- If hacking of the software is detected by means of special programs. The product is then removed from the warranty as of the same day;
+<br><br>
+- In case of defects occurring beyond the manufacturer's and seller's control, as a result of accident, fire, flood, war, and other insurmountable force majeure circumstances;
+<br><br>
+- In case of defects caused by incorrect use of the control unit and software;
+<br><br>
+- If marks are left on the product as a result of the intervention of persons not authorized to perform this work. Especially if the intervention was performed by a service center that does not have the proper documentation and authorization;
+<br><br>
+- When non-original accessories not specified in the product specification are installed, preventing its normal operation or causing product modification. For accessories with a limited lifetime (battery, accumulator, etc.);
+<br><br>
+- Any product not designed by the manufacturer;
+<br><br>
+- Due to loss of database, secret word, or other data as a result of software malfunction;
+<br><br>
+- In the case of writing any words or applying images to the surface of the products for decoration by scratching or burning. Excluding special stickers;
+<br><br>
+- The warranty does not cover mechanical damage to products, glass, plastic, painted, and machined parts.</p>
+
+<h3 class="h3">Warranty Services Are Not Available:</h3>
+<p class="p3">- Technical information and tips are available on the iSpace website.
+<br><br>
+- *Support by phone is free for 30 days.
+<br><br>
+- +994 (012) 493-54-34
+<br><br>
+- +994 (050) 766-00-25</p>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script>
+    const track = document.getElementById('track');
+    const btnLeft = document.getElementById('leftBtn');
+    const btnRight = document.getElementById('rightBtn');
+
+    btnLeft.addEventListener('click', () => {
+      track.scrollBy({ left: -300, behavior: 'smooth' });
+    });
+
+    btnRight.addEventListener('click', () => {
+      track.scrollBy({ left: 300, behavior: 'smooth' });
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+  {% endblock %}

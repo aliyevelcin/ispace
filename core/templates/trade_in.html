@@ -1,0 +1,723 @@
+{% extends 'base.html' %}
+ {% load static %}
+
+ {% block css %}
+  <link rel="stylesheet" href="{% static 'css/trade_in.css' %}">
+  {% endblock %}
+ {% block content %}
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+<!-- navbar end -->
+
+
+
+    <div class="container-fluid">
+	<div class="row">
+		<div class="col-md-4">
+            <div style="margin-left: 40px;" class="div-card">
+                <div style="display: flex;">
+                <div class="div-number">
+                    <p class="number">1</p>
+                </div>
+                <h3 class="h3">Your old device</h3>
+                </div>
+                <p class="p3">Select the old device model you want to exchange <br>from the list.</p>
+                <button class="div-button"><svg data-v-e79eec49="" data-v-33054b96="" width="16px" height="16px" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="trade-in-add-button_icon" stroke-color="currentColor" fill-color="currentColor"><path d="M0.492188 7.74609C0.492188 7.57893 0.55189 7.43564 0.671296 7.31623C0.790702 7.19683 0.931004 7.13712 1.0922 7.13712H7.14608V1.0922C7.14608 0.931004 7.2028 0.790702 7.31623 0.671296C7.43564 0.55189 7.57893 0.492188 7.74609 0.492188C7.91326 0.492188 8.05655 0.55189 8.17595 0.671296C8.29536 0.790702 8.35506 0.931004 8.35506 1.0922V7.13712H14.391C14.5582 7.13712 14.7015 7.19683 14.8209 7.31623C14.9403 7.43564 15 7.57893 15 7.74609C15 7.91326 14.9403 8.05655 14.8209 8.17595C14.7015 8.28939 14.5582 8.34611 14.391 8.34611H8.35506V14.4C8.35506 14.5612 8.29536 14.7015 8.17595 14.8209C8.05655 14.9403 7.91326 15 7.74609 15C7.57893 15 7.43564 14.9403 7.31623 14.8209C7.2028 14.7015 7.14608 14.5612 7.14608 14.4V8.34611H1.0922C0.931004 8.34611 0.790702 8.28939 0.671296 8.17595C0.55189 8.05655 0.492188 7.91326 0.492188 7.74609Z" fill="currentColor"></path></svg> Add device</button>
+            </div>
+		</div>
+		<div class="col-md-4">
+            <div style="margin-left: 20px;" class="div-card">
+                <div style="display: flex;">
+                <div class="div-number">
+                    <p class="number">2</p>
+                </div>
+                <h3 class="h3">Selecting a new device</h3>
+                </div>
+                <p class="p3">Select the device model you want to buy from the <br>list.</p>
+                <button class="div-button"><svg data-v-e79eec49="" data-v-33054b96="" width="16px" height="16px" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="trade-in-add-button_icon" stroke-color="currentColor" fill-color="currentColor"><path d="M0.492188 7.74609C0.492188 7.57893 0.55189 7.43564 0.671296 7.31623C0.790702 7.19683 0.931004 7.13712 1.0922 7.13712H7.14608V1.0922C7.14608 0.931004 7.2028 0.790702 7.31623 0.671296C7.43564 0.55189 7.57893 0.492188 7.74609 0.492188C7.91326 0.492188 8.05655 0.55189 8.17595 0.671296C8.29536 0.790702 8.35506 0.931004 8.35506 1.0922V7.13712H14.391C14.5582 7.13712 14.7015 7.19683 14.8209 7.31623C14.9403 7.43564 15 7.57893 15 7.74609C15 7.91326 14.9403 8.05655 14.8209 8.17595C14.7015 8.28939 14.5582 8.34611 14.391 8.34611H8.35506V14.4C8.35506 14.5612 8.29536 14.7015 8.17595 14.8209C8.05655 14.9403 7.91326 15 7.74609 15C7.57893 15 7.43564 14.9403 7.31623 14.8209C7.2028 14.7015 7.14608 14.5612 7.14608 14.4V8.34611H1.0922C0.931004 8.34611 0.790702 8.28939 0.671296 8.17595C0.55189 8.05655 0.492188 7.91326 0.492188 7.74609Z" fill="currentColor"></path></svg> Add device</button>
+            </div>
+		</div>
+		<div class="col-md-4">
+            <div style="margin-left: 0px;" class="div-card">
+                <div style="display: flex;">
+                <div class="div-number">
+                    <p class="number">3</p>
+                </div>
+                <h3 class="h3">Advance payment</h3>
+                </div>
+                <p class="p3">All devices that are turned in as part of the <br>Trade-in program to iSpace will be fully <br>used towards your purchase. The <br>difference can be paid by card, cash, <br>installment or credit.</p>
+                <button class="div-button2">Checkout</button>
+            </div>
+		</div>
+	</div>
+</div>
+  <hr style="background-color: #7D7D7D; opacity: 0.3; width: 1270px;">
+
+
+
+<!-- ---------------------------------------------------------------------------------- -->
+
+
+
+<div style="text-align: center;">
+    <h3 style="margin-top: 30px;" class="h3">Trade-in at iSpace</h3>
+    <p style="margin-top: 15px;" class="p1">Get up to 150 AZN on top of your redemption amount.</p>
+  <hr style="background-color: #7D7D7D; opacity: 0.3; width: 1270px; margin-top: 40px;">
+</div>
+
+
+
+
+<div style="margin-top: 50px;" class="container-fluid">
+	<div class="row">
+		<div class="col-md-6">
+        <img class="img1" src="https://cdn0.it4profit.com/s3size/el:t/rt:fill/plain/s3://cms/rich-block/16/4c/164c974ee3a7e047b0b740bb65dda8b4/mac_400x250.webp" alt="">
+		</div>
+		<div class="col-md-6">
+		<div class="div2">
+        <h3 class="h4">MacBook Trade-in Bonus <span style="color: #007BFF;">up to 150 AZN</span> as a gift!</h3>
+        <p class="p5">The bonus amount depends on the device model and will be added to its estimated value:
+<br><br>
+- MacBook Air Intel: <span style="color: #007BFF; font-weight: 500;">up to 90 AZN</span>.
+<br><br>
+- MacBook Pro Intel: <span style="color: #007BFF; font-weight: 500;">up to 90 AZN</span>.
+<br><br>
+- MacBook Air M1: <span style="color: #007BFF; font-weight: 500;">up to 110 AZN</span>.
+<br><br>
+- MacBook Pro M1 | Pro | Max: <span style="color: #007BFF; font-weight: 500;">up to 110 AZN</span>.
+<br><br>
+- MacBook Air M2: <span style="color: #007BFF; font-weight: 500;">up to 130 AZN</span>.
+<br><br>
+- MacBook Pro M2 | Pro | Max: <span style="color: #007BFF; font-weight: 500;">up to 130 AZN</span>.
+<br><br>
+- MacBook Air M3: <span style="color: #007BFF; font-weight: 500;">up to 130 AZN</span>.
+<br><br>
+- MacBook Pro M3 | Pro | Max: <span style="color: #007BFF; font-weight: 500;">up to 150 AZN</span>.</p>
+		
+        </div>
+    </div>
+	</div>   
+    
+</div>
+
+  <hr style="background-color: #7D7D7D; opacity: 0.3; width: 1270px; margin-top: 50px;">
+
+
+
+<div style="margin-top: 50px;" class="container-fluid">
+	<div class="row">
+		<div class="col-md-6">
+            <div class="div2">
+        <h3 class="h4">Upgrade your iPhone via Trade-in on iSpace</h3>
+        <p style="font-weight: 500;" class="p5">Additional benefit up to <span style="color: #007BFF;">150 AZN</span> when purchasing a new iPhone 17 series</p> 
+        <p class="p5">Discover the best Trade-In offer for iPhone 17 on iSpace iSpace and enjoy cutting-edge technology at an unbeatable price!
+<br><br>
+We have exclusive offers that will bring you significant financial benefits when trading in your old iPhone, regardless of model.
+<br><br>
+Get an extra advantage when purchasing a new iPhone, depending on your choice models:
+<br><br>
+iPhone 16 series | iPhone 17: <span style="color: #007BFF; font-weight: 500;">up to 150 AZN</span>.
+<br><br>
+iPhone 15 series: <span style="color: #007BFF; font-weight: 500;">up to 100 AZN</span>.
+<br><br>
+iPhone 14 series: <span style="color: #007BFF; font-weight: 500;">up to 75 AZN</span>.
+<br><br>
+iPhone 13 series: <span style="color: #007BFF; font-weight: 500;">up to 60 AZN</span>.
+<br><br>
+iPhone 12 series: <span style="color: #007BFF; font-weight: 500;">up to 45 AZN</span>.
+<br><br>
+iPhone 11 series: <span style="color: #007BFF; font-weight: 500;">up to 30 AZN</span>.
+<br><br>
+iPhone Xr | Xs | Xs Max series: <span style="color: #007BFF; font-weight: 500;">up to 15 AZN</span>.</p>
+        </div>
+		</div>
+		<div class="col-md-6">
+      <img style="margin-top: 40px;" class="img2" src="https://cdn0.it4profit.com/s3size/el:t/rt:fill/plain/s3://cms/rich-block/23/6e/236e95579ee34c87042ecff049471389/iphone_400x250.webp" alt="">
+		</div>
+	</div>   
+    
+</div>
+
+
+<div style="background-color: #F7F7F7;">
+    <hr style="background-color: #7D7D7D; opacity: 0.3; width: 1270px; margin-top: 50px;">
+    <div style="margin-left: 35px;">
+    <h2 class="h2">How it works?</h2>
+    <p class="p5_2">1.Calculate the preliminary cost of your device.</p>
+    <p class="p5_">To do this, click “Add” and select the device model you want to return. You can bring multiple devices –this way your benefit will be even greater, because <br>their costs add up.</p>
+    
+    <p class="p5_2">2.Select the device model you want to buy from the list.</p>
+    <p class="p5_">You will receive a preliminary cost estimate taking into account the benefits.</p>
+
+    <p class="p5_2">3.Complete an online application for Trade-in.</p>
+    <p class="p5_">After you submit your application, you will see a QR code with a link to the diagnostic application. Download it in advance - this is will help save time on <br>installing it in the store and speed up the transaction. All further actions in the application will be carried out by our manager in the store. After completing the <br>online application, our specialist will contact you. He will tell about Trade-in conditions, required documents and the assessment process. It will also reserve a <br>future purchase for you in the store. You can refuse the call - then all the necessary information will be sent to you by email.</p>
+
+    <p class="p5_2">4.Submit your device for instant diagnostics at any iSpace store.</p>
+    <p class="p5_">The device must be in working order (turn on), have no significant damage to the case and screen, as well as traces contact with liquid. If the device meets <br>these requirements, we will conduct diagnostics to determine its final cost. It will take no more than 5 minutes. When assessing, we take into account chips, <br>damage and check documents.</p>
+
+    <p class="p5_2">5.Use the estimated cost when purchasing a new device.</p>
+    <p class="p5_">All of your trade-in devices can be collectively used to pay for your purchase. What would you like It’s up to you to purchase, there are no restrictions on the <br>assortment. The remaining amount can be paid by card, cash, or apply for installments or credit.</p>
+</div>
+  <hr style="background-color: #7D7D7D; opacity: 0.3; width: 1270px; margin-top: 40px;">
+  </div>
+
+
+  <!-- ------------------------- -->
+
+
+  <div>
+    <div style="margin-left: 35px;">
+    <h2 class="h2">Popular questions about Trade-in on iSpace.</h2>
+
+          <div style="margin-top:   30px;">
+    <div class="accordion" id="accordionExample">
+    <div class="card">
+        <hr style="background-color: #7D7D7D; opacity: 0.2; width: 1170px; margin-bottom: -2px; height: 1.3px; margin-left: 0px !important;">
+        
+        <h2 class="mb-0">
+          <button style="margin-left: px; margin-top: -20px;" class="button1" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            What devices are accepted?
+          </button>
+          
+        </h2>
+  
+      </div>
+  
+      <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+        <div class="card-body">
+        <p class="collapse-p">Apple devices and devices from other brands are accepted. Device list available for Trade-in is updated. You can see the current list <br>models in the Trade-in calculator on the website.</p>
+        </div>
+      </div>
+  <hr style="background-color: #7D7D7D; opacity: 0.2; width: 1170px; margin-top: 10px; height: 1.3px; margin-left: 0px !important;">
+    </div>
+</div>
+
+<div style="margin-top: -15px;">
+    <div class="card">
+        
+        <h2 class="mb-0">
+          <button style="margin-top: -20px;" class="button1" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+            How long does the assessment take?
+          </button>
+          
+        </h2>
+  
+      </div>
+  
+      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+        <div class="card-body">
+        <p class="collapse-p">The assessment takes 5-7 minutes</p>
+        </div>
+      </div>
+  <hr style="background-color: #7D7D7D; opacity: 0.2; width: 1170px; margin-top: 10px; height: 1.3px; margin-left: 0px !important;">
+    </div>
+
+<div style="margin-top: -15px;">
+    <div class="card">
+        
+        <h2 class="mb-0">
+          <button style="margin-top: -20px;" class="button1" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+            What documents are needed to register goods under the program?
+          </button>
+          
+        </h2>
+  
+      </div>
+  
+      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+        <div class="card-body">
+        <p class="collapse-p">Passport</p>
+        </div>
+      </div>
+  <hr style="background-color: #7D7D7D; opacity: 0.2; width: 1170px; margin-top: 10px; height: 1.3px; margin-left: 0px !important;">
+    </div>
+
+<div style="margin-top: -15px;">
+    <div class="card">
+        
+        <h2 class="mb-0">
+          <button style="margin-top: -20px;" class="button1" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+            How many devices can I rent out?
+          </button>
+          
+        </h2>
+  
+      </div>
+  
+      <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+        <div class="card-body">
+        <p class="collapse-p">You can donate an unlimited number of devices</p>
+        </div>
+      </div>
+  <hr style="background-color: #7D7D7D; opacity: 0.2; width: 1170px; margin-top: 10px; height: 1.3px; margin-left: 0px !important;">
+    </div>    
+
+<div style="margin-top: -15px;">
+    <div class="card">
+        
+        <h2 class="mb-0">
+          <button style="margin-top: -20px;" class="button1" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+            Do I have to pay for an assessment?
+          </button>
+          
+        </h2>
+  
+      </div>
+  
+      <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+        <div class="card-body">
+        <p class="collapse-p">No. The assessment is free</p>
+        </div>
+      </div>
+  <hr style="background-color: #7D7D7D; opacity: 0.2; width: 1170px; margin-top: 10px; height: 1.3px; margin-left: 0px !important;">
+    </div>   
+
+<div style="margin-top: -15px;">
+    <div class="card">
+        
+        <h2 class="mb-0">
+          <button style="margin-top: -20px;" class="button1" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+            Who can use the certificate? Can I give a certificate?
+          </button>
+          
+        </h2>
+  
+      </div>
+  
+      <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
+        <div class="card-body">
+        <p class="collapse-p">Can be given as a gift. The main thing is to provide the original certificate. All information about it will be stored in the system (activation <br>date, denomination, stamp)</p>
+        </div>
+      </div>
+  <hr style="background-color: #7D7D7D; opacity: 0.2; width: 1170px; margin-top: 10px; height: 1.3px; margin-left: 0px !important;">
+    </div> 
+
+<div style="margin-top: -15px;">
+    <div class="card">
+        
+        <h2 class="mb-0">
+          <button style="margin-top: -20px;" class="button1" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven">
+            Is it possible to get 1 certificate instead of several surrendered devices?
+          </button>
+          
+        </h2>
+  
+      </div>
+  
+      <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionExample">
+        <div class="card-body">
+        <p class="collapse-p">There is no such possibility yet. For 1 device returned you can receive 1 certificate.</p>
+        </div>
+      </div>
+  <hr style="background-color: #7D7D7D; opacity: 0.2; width: 1170px; margin-top: 10px; height: 1.3px; margin-left: 0px !important;">
+    </div>
+
+<div style="margin-top: -15px;">
+    <div class="card">
+        
+        <h2 class="mb-0">
+          <button style="margin-top: -20px;" class="button1" type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="true" aria-controls="collapseEight">
+            Is it possible to get money for a device without buying a new smartphone?
+          </button>
+          
+        </h2>
+  
+      </div>
+  
+      <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordionExample">
+        <div class="card-body">
+        <p class="collapse-p">No, the certificate cannot be cashed.</p>
+        </div>
+      </div>
+  <hr style="background-color: #7D7D7D; opacity: 0.2; width: 1170px; margin-top: 10px; height: 1.3px; margin-left: 0px !important;">
+    </div>
+
+<div style="margin-top: -15px;">
+    <div class="card">
+        
+        <h2 class="mb-0">
+          <button style="margin-top: -20px;" class="button1" type="button" data-toggle="collapse" data-target="#collapseNine" aria-expanded="true" aria-controls="collapseNine">
+            Where and for what else can the certificate be used?
+          </button>
+          
+        </h2>
+  
+      </div>
+  
+      <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#accordionExample">
+        <div class="card-body">
+        <p class="collapse-p">The certificate can be used in iSpace stores to purchase any goods and services available for purchase</p>
+        </div>
+      </div>
+  <hr style="background-color: #7D7D7D; opacity: 0.2; width: 1170px; margin-top: 10px; height: 1.3px; margin-left: 0px !important;">
+    </div>
+
+<div style="margin-top: -15px;">
+    <div class="card">
+        
+        <h2 class="mb-0">
+          <button style="margin-top: -20px;" class="button1" type="button" data-toggle="collapse" data-target="#collapseTen" aria-expanded="true" aria-controls="collapseTen">
+            And if the amount indicated in the certificate exceeds the cost of the new product, will they refund me the difference?
+          </button>
+          
+        </h2>
+  
+      </div>
+  
+      <div id="collapseTen" class="collapse" aria-labelledby="headingTen" data-parent="#accordionExample">
+        <div class="card-body">
+        <p class="collapse-p">No. The remaining amount is not refundable</p>
+        </div>
+      </div>
+  <hr style="background-color: #7D7D7D; opacity: 0.2; width: 1170px; margin-top: 10px; height: 1.3px; margin-left: 0px !important;">
+    </div>
+
+<div style="margin-top: -15px;">
+    <div class="card">
+        
+        <h2 class="mb-0">
+          <button style="margin-top: -20px;" class="button1" type="button" data-toggle="collapse" data-target="#collapseEleven" aria-expanded="true" aria-controls="collapseEleven">
+            How is the assessment carried out?
+          </button>
+          
+        </h2>
+  
+      </div>
+  
+      <div id="collapseEleven" class="collapse" aria-labelledby="headingEleven" data-parent="#accordionExample">
+        <div class="card-body">
+        <p class="collapse-p">To determine the cost of the product, the device is rated, taking into account condition of the device and average cost on the market. Our <br>staff on site.</p>
+        </div>
+      </div>
+  <hr style="background-color: #7D7D7D; opacity: 0.2; width: 1170px; margin-top: 10px; height: 1.3px; margin-left: 0px !important;">
+    </div>
+
+<div style="margin-top: -15px;">
+    <div class="card">
+        
+        <h2 class="mb-0">
+          <button style="margin-top: -20px;" class="button1" type="button" data-toggle="collapse" data-target="#collapseTwelve" aria-expanded="true" aria-controls="collapseTwelve">
+            What are the requirements for used goods?
+          </button>
+          
+        </h2>
+  
+      </div>
+  
+      <div id="collapseTwelve" class="collapse" aria-labelledby="headingTwelve" data-parent="#accordionExample">
+        <div class="card-body">
+        <p class="collapse-p">The goods must belong to the client by right of ownership and are not in dispute, under arrest, bail, etc. The device should not be linked to <br>accounts and locked with passwords. The state of the display (device) allows you to diagnostics of all its functions</p>
+        </div>
+      </div>
+  <hr style="background-color: #7D7D7D; opacity: 0.2; width: 1170px; margin-top: 10px; height: 1.3px; margin-left: 0px !important;">
+    </div>
+
+<div style="margin-top: -15px;">
+    <div class="card">
+        
+        <h2 class="mb-0">
+          <button style="margin-top: -20px;" class="button1" type="button" data-toggle="collapse" data-target="#collapseThirteen" aria-expanded="true" aria-controls="collapseThirteen">
+            What affects the estimated value of a used product?
+          </button>
+          
+        </h2>
+  
+      </div>
+  
+      <div id="collapseThirteen" class="collapse" aria-labelledby="headingThirteen" data-parent="#accordionExample">
+        <div class="card-body">
+        <p class="collapse-p">Model, external condition, technical condition, presence of original packaging and accessories</p>
+        </div>
+      </div>
+  <hr style="background-color: #7D7D7D; opacity: 0.2; width: 1170px; margin-top: 10px; height: 1.3px; margin-left: 0px !important;">
+    </div>
+
+<div style="margin-top: -15px;">
+    <div class="card">
+        
+        <h2 class="mb-0">
+          <button style="margin-top: -20px;" class="button1" type="button" data-toggle="collapse" data-target="#collapseFourteen" aria-expanded="true" aria-controls="collapseFourteen">
+            Do I need to have a box and phone accessories with me?
+          </button>
+          
+        </h2>
+  
+      </div>
+  
+      <div id="collapseFourteen" class="collapse" aria-labelledby="headingFourteen" data-parent="#accordionExample">
+        <div class="card-body">
+        <p class="collapse-p">The presence of a factory box and a charger with cable (USB) increases the amount certificate. But their presence is not required.</p>
+        </div>
+      </div>
+  <hr style="background-color: #7D7D7D; opacity: 0.2; width: 1170px; margin-top: 10px; height: 1.3px; margin-left: 0px !important;">
+    </div>
+
+<div style="margin-top: -15px;">
+    <div class="card">
+        
+        <h2 class="mb-0">
+          <button style="margin-top: -20px;" class="button1" type="button" data-toggle="collapse" data-target="#collapseFifteen" aria-expanded="true" aria-controls="collapseFifteen">
+            Do I need to have a box and phone accessories with me?
+          </button>
+          
+        </h2>
+  
+      </div>
+  
+      <div id="collapseFifteen" class="collapse" aria-labelledby="headingFifteen" data-parent="#accordionExample">
+        <div class="card-body">
+        <p class="collapse-p">The presence of a factory box and a charger with cable (USB) increases the amount certificate. But their presence is not required.</p>
+        </div>
+      </div>
+  <hr style="background-color: #7D7D7D; opacity: 0.2; width: 1170px; margin-top: 10px; height: 1.3px; margin-left: 0px !important;">
+    </div>
+
+<div style="margin-top: -15px;">
+    <div class="card">
+        
+        <h2 class="mb-0">
+          <button style="margin-top: -20px;" class="button1" type="button" data-toggle="collapse" data-target="#collapseSixteen" aria-expanded="true" aria-controls="collapseSixteen">
+            Can a certificate be used multiple times?
+          </button>
+          
+        </h2>
+  
+      </div>
+  
+      <div id="collapseSixteen" class="collapse" aria-labelledby="headingSixteen" data-parent="#accordionExample">
+        <div class="card-body">
+        <p class="collapse-p">The certificate amount is used at a time and in full.</p>
+        </div>
+      </div>
+  <hr style="background-color: #7D7D7D; opacity: 0.2; width: 1170px; margin-top: 10px; height: 1.3px; margin-left: 0px !important;">
+    </div>
+
+<div style="margin-top: -15px;">
+    <div class="card">
+        
+        <h2 class="mb-0">
+          <button style="margin-top: -20px;" class="button1" type="button" data-toggle="collapse" data-target="#collapseSeventeen" aria-expanded="true" aria-controls="collapseSeventeen">
+            Certificate validity period
+          </button>
+          
+        </h2>
+  
+      </div>
+  
+      <div id="collapseSeventeen" class="collapse" aria-labelledby="headingSeventeen" data-parent="#accordionExample">
+        <div class="card-body">
+        <p class="collapse-p">The certificate is valid for 12 months from the date of signing the purchase agreement. Trade-in sales. After the Certificate expires, it <br>cannot be used to pay for goods, regardless of the reasons for which it was not used.</p>
+        </div>
+      </div>
+  <hr style="background-color: #7D7D7D; opacity: 0.2; width: 1170px; margin-top: 10px; height: 1.3px; margin-left: 0px !important;">
+    </div>
+
+<div style="margin-top: -15px;">
+    <div class="card">
+        
+        <h2 class="mb-0">
+          <button style="margin-top: -20px;" class="button1" type="button" data-toggle="collapse" data-target="#collapseEighteen" aria-expanded="true" aria-controls="collapseEighteen">
+            How long will this promotion last?
+          </button>
+          
+        </h2>
+  
+      </div>
+  
+      <div id="collapseEighteen" class="collapse" aria-labelledby="headingEighteen" data-parent="#accordionExample">
+        <div class="card-body">
+        <p class="collapse-p">The iSpace chain of stores is doing everything to develop the service for Apple users in Moldova, therefore the offer is not limited in time.</p>
+        </div>
+      </div>
+  <hr style="background-color: #7D7D7D; opacity: 0.2; width: 1170px; margin-top: 10px; height: 1.3px; margin-left: 0px !important;">
+    </div>
+
+<div style="margin-top: -15px;">
+    <div class="card">
+        
+        <h2 class="mb-0">
+          <button style="margin-top: -20px;" class="button1" type="button" data-toggle="collapse" data-target="#collapseNineteen" aria-expanded="true" aria-controls="collapseNineteen">
+            What will happen to my data on the old device? They might hit someone to a stranger?
+          </button>
+          
+        </h2>
+  
+      </div>
+  
+      <div id="collapseNineteen" class="collapse" aria-labelledby="headingNineteen" data-parent="#accordionExample">
+        <div class="card-body">
+        <p class="collapse-p">We recommend that you back up your information and erase all data from devices before exchange. This way you will be sure that your <br>data is protected and it will be easy to transfer to a new device after the exchange.</p>
+        </div>
+      </div>
+  <hr style="background-color: #7D7D7D; opacity: 0.2; width: 1170px; margin-top: 10px; height: 1.3px; margin-left: 0px !important;">
+    </div>
+
+<div style="margin-top: -15px;">
+    <div class="card">
+        
+        <h2 class="mb-0">
+          <button style="margin-top: -20px;" class="button1" type="button" data-toggle="collapse" data-target="#collapseTwenty" aria-expanded="true" aria-controls="collapseTwenty">
+            How can I determine the model of the device I am renting out?
+          </button>
+          
+        </h2>
+  
+      </div>
+  
+      <div id="collapseTwenty" class="collapse" aria-labelledby="headingTwenty" data-parent="#accordionExample">
+        <div class="card-body">
+        <p class="collapse-p">You can determine the device model by following the link:
+<br>
+- iPhone - https://support.apple.com/ru-ru/HT201296
+<br>
+- MacBook Pro - href=https://support.apple.com/ru-ru/HT201300
+<br>
+- MacBook Air -href=https://support.apple.com/ru-ru/HT201862
+<br>
+- iMac - href=https://support.apple.com/ru-ru/HT201634
+<br>
+- iPad - href=https://support.apple.com/ru-ru/HT201471
+<br>
+- Mac mini -href=https://support.apple.com/ru-ru/HT201894
+<br>
+- Apple Watch - href=https://support.apple.com/ru-ru/HT204507</p>
+        </div>
+      </div>
+  <hr style="background-color: #7D7D7D; opacity: 0.2; width: 1170px; margin-top: 10px; height: 1.3px; margin-left: 0px !important;">
+    </div>
+
+
+
+    </div> 
+  </div>
+
+
+<hr style="background-color: #7D7D7D; opacity: 0.3; width: 1270px; margin-top: 50px;">
+
+<div style="height: 700px;" class="carousel-container">
+
+    <h1 style="margin-top: 20px; text-align: center;" class="h1">Trade-in your current device</h1>
+
+    <button style="margin-top: -70px;" class="btn left2" id="leftBtn">❮</button>
+
+ 
+    <div class="carousel-track" id="track"  id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+
+      <ol style="margin-top: 30px; " class="carousel-indicators two">
+      <li data-target="#carouselExampleIndicators2" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators2" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators2" data-slide-to="2"></li>
+    </ol>
+<div>
+
+<div style="display: flex; padding-bottom: 50px;">
+{% for model, product in new_products %}
+<div style="text-align: center; margin-left: 50px;">
+  <div class="imgborder">
+    <a href="{% url 'core:pay' model product.id %}">
+      <img class="imginborder" src="{{ product.image.url }}" alt="">
+    </a>
+  </div>
+  <p class="card-new" style="font-size: 14px; font-weight: 600; margin-top: 5px;">NEW</p>
+  
+  <a class="ainborder" href="{% url 'core:pay' model product.id %}">
+  <p class="pinborder">{{ product.name }}</p>
+  </a>
+
+  <p class="p2inborder">{{ product.price }} ₼</p>
+  
+  <a href="{% url 'core:pay' model product.id %}">
+    <button class="button2" style="margin-top: -10px;">Add to cart</button>
+  </a>
+</div>
+{% endfor %}
+
+
+
+
+</div>
+    
+  </div>
+    <button style="margin-top: -70px;" class="btn right2" id="rightBtn">❯</button>
+
+</div> 
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- FOOTER START -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script>
+    const track = document.getElementById('track');
+    const btnLeft = document.getElementById('leftBtn');
+    const btnRight = document.getElementById('rightBtn');
+
+    btnLeft.addEventListener('click', () => {
+      track.scrollBy({ left: -300, behavior: 'smooth' });
+    });
+
+    btnRight.addEventListener('click', () => {
+      track.scrollBy({ left: 300, behavior: 'smooth' });
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+{% endblock %}

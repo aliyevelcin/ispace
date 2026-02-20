@@ -1,0 +1,102 @@
+<hr style="background-color: #7D7D7D; opacity: 0.3; width: 1270px; margin-top: 50px;">
+<footer style=" height: 700px;">
+<div style="display: flex;">
+
+  <div style="display: grid; margin-left: 80px">
+  <h6 class="footer-h6">Shop</h6>
+  <a href="{% url 'core:mac' %}" style="margin-top: 20px;" class="footer-p">Mac</a>
+  <a href="{% url 'core:ipad' %}"  class="footer-p">iPad</a>
+  <a href="{% url 'core:iphone' %}"  class="footer-p">iPhone</a>
+  <a href="{% url 'core:watch' %}" class="footer-p">Watch</a>
+  <a href="{% url 'core:airpods' %}"  class="footer-p">AirPods</a>
+  <a href="{% url 'core:tv_home' %}"  class="footer-p">TV & Home</a>
+  <a href="{% url 'core:accessories' %}"  class="footer-p">Accessories</a>
+  <a href="{% url 'core:giftcards' %}"  class="footer-p">Gift Certificates</a>
+
+  </div>
+
+<div style="display: grid; margin-left: 130px">
+  <h6 class="footer-h6">Services</h6>
+  <a href="{% url 'core:trade_in' %}" style="margin-top: -30px;" class="footer-p2">Trade-in</a>
+  <a href="{% url 'core:financing' %}"  class="footer-p2">Financing</a>
+  <a href="{% url 'core:warranty' %}"  class="footer-p2">Warranty</a>
+  <a href="https://promo.ispace.az/en/service-repairs"  class="footer-p2">iSupport</a>
+
+  </div>
+
+  <div style="display: grid; margin-left: 150px">
+  <h6 class="footer-h6">For Clients</h6>
+  <a href="https://ispace.az/blog/en/" style="margin-top: -40px;" class="footer-p3">Blog</a>
+  <a href="https://ispace.az/blog/en/category/press-releases/"  class="footer-p3">Press Releases</a>
+  <a href="https://promo.ispace.az/en/wallet"  class="footer-p3">Loyalty Program</a>
+  <a href="https://asbc.az/en"  class="footer-p3">Legal entities</a>
+
+  </div>
+
+   <div style="display: grid; margin-left: 150px">
+  <h6 class="footer-h6">Information</h6>
+  <a href="" style="margin-top: -30px;" class="footer-p3">About</a>
+  <a href=""  class="footer-p4">Contact us</a>
+  <a href=""  class="footer-p4">Payment methods</a>
+  <a href=""  class="footer-p4">Privacy policy</a>
+  <a href=""  class="footer-p4">Vacancies</a>
+  </div>
+
+  <div style=" margin-left: 150px">
+  <h6 class="footer-h6">Apple Premium Partner</h6>
+  <br>
+  <a style="margin-top: -30px;" class="footer-p5">iSpace is your trusted Apple <br>expert in Azerbaijan, recognized <br>with Premium Partner status. <br>Explore the latest Apple devices <br>and accessories at our stores. <br>Enjoy premium service in the <br>unique atmosphere of a globally <br>renowned brand.</a>
+<br>
+<br>
+<img src="https://prod-cdn.prod.asbis.io/s3/cms/site/a0/72/a0721734b6a0b53f7eb5a33bd6c87b1e/app_symbol_large_black_1.svg" alt="">
+<br>
+<br>
+<img src="https://prod-cdn.prod.asbis.io/s3/cms/site/5a/ed/5aed1a16cc5102155dd5ca6ea4cc3a6b/service_short_logo_black_1.svg" alt="">
+  </div>
+</div>
+
+<div style="margin-top: 30px;">
+
+  <div style="display: flex;">
+    <div>
+  <h6 style="margin-left: 80px;" class="footer-sub">Subscribe to our Emails</h6>
+
+<form action="" method="post">
+  {% csrf_token %}
+  <div style="margin-left: 80px; margin-top: 15px;" class="input-box">
+    {{ form.email }}
+    {{ form.email.errors }}
+  <button class="arrow-btn">→</button>
+</div>
+</form>
+
+
+  <div style="display: flex; margin-top: 35px; margin-left: 75px;">
+    <label style="margin-left: 10px; font-size: 14.5px; letter-spacing: .6px; margin-top: -15px; cursor: pointer;" class="check-footer" for="checkFooter">Please type your e-mail here to <br><span style="color: rgb(44, 44, 44);">Subscribe.</span></label>
+  </div>
+
+
+</div>
+
+<div class="divf">
+  <svg class="svg" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="" stroke-color="currentColor" fill-color="currentColor" data-v-d33eade6="" data-v-e79eec49=""><path d="M7.99998 1.44147C10.1361 1.44147 10.3891 1.4496 11.2327 1.48809C12.0126 1.52369 12.4362 1.65401 12.7182 1.76354C13.0916 1.90867 13.3581 2.08205 13.638 2.36198C13.9179 2.64191 14.0913 2.90844 14.2364 3.28183C14.346 3.56376 14.4763 3.98735 14.5119 4.76731C14.5504 5.61091 14.5585 5.86391 14.5585 8.00002C14.5585 10.1361 14.5504 10.3891 14.5119 11.2327C14.4763 12.0127 14.346 12.4363 14.2364 12.7182C14.0913 13.0916 13.9179 13.3581 13.638 13.638C13.3581 13.918 13.0916 14.0914 12.7182 14.2365C12.4362 14.346 12.0126 14.4763 11.2327 14.5119C10.3892 14.5504 10.1362 14.5586 7.99998 14.5586C5.86375 14.5586 5.61075 14.5504 4.76731 14.5119C3.98732 14.4763 3.56373 14.346 3.28183 14.2365C2.90841 14.0914 2.64188 13.918 2.36195 13.638C2.08202 13.3581 1.90863 13.0916 1.76354 12.7182C1.65398 12.4363 1.52366 12.0127 1.48806 11.2327C1.44957 10.3891 1.44144 10.1361 1.44144 8.00002C1.44144 5.86391 1.44957 5.61091 1.48806 4.76735C1.52366 3.98735 1.65398 3.56376 1.76354 3.28183C1.90863 2.90844 2.08202 2.64191 2.36195 2.36198C2.64188 2.08205 2.90841 1.90867 3.28183 1.76354C3.56373 1.65401 3.98732 1.52369 4.76728 1.48809C5.61088 1.4496 5.86388 1.44147 7.99998 1.44147ZM7.99998 0C5.8273 0 5.5549 0.00920926 4.70161 0.0481422C3.85007 0.0870116 3.26855 0.222229 2.75966 0.420006C2.23359 0.624451 1.78745 0.897997 1.34271 1.34274C0.897966 1.78748 0.624419 2.23363 0.419974 2.7597C0.222197 3.26859 0.0869798 3.8501 0.0481104 4.70164C0.0091775 5.5549 0 5.82733 0 8.00002C0 10.1727 0.0091775 10.4451 0.0481104 11.2984C0.0869798 12.1499 0.222197 12.7314 0.419974 13.2403C0.624419 13.7664 0.897966 14.2125 1.34271 14.6573C1.78745 15.102 2.23359 15.3756 2.75966 15.58C3.26855 15.7778 3.85007 15.913 4.70161 15.9519C5.5549 15.9908 5.8273 16 7.99998 16C10.1727 16 10.4451 15.9908 11.2984 15.9519C12.1499 15.913 12.7314 15.7778 13.2403 15.58C13.7664 15.3756 14.2125 15.102 14.6573 14.6573C15.102 14.2125 15.3755 13.7664 15.58 13.2403C15.7778 12.7314 15.913 12.1499 15.9519 11.2984C15.9908 10.4451 16 10.1727 16 8.00002C16 5.82733 15.9908 5.5549 15.9519 4.70164C15.913 3.8501 15.7778 3.26859 15.58 2.7597C15.3755 2.23363 15.102 1.78748 14.6573 1.34274C14.2125 0.897997 13.7664 0.624451 13.2403 0.420006C12.7314 0.222229 12.1499 0.0870116 11.2984 0.0481422C10.4451 0.00920926 10.1727 0 7.99998 0ZM7.99998 3.89189C5.73114 3.89189 3.89186 5.73117 3.89186 8.00002C3.89186 10.2689 5.73114 12.1081 7.99998 12.1081C10.2688 12.1081 12.1081 10.2689 12.1081 8.00002C12.1081 5.73117 10.2688 3.89189 7.99998 3.89189ZM7.99998 10.6667C6.52723 10.6667 5.3333 9.47277 5.3333 8.00002C5.3333 6.52727 6.52723 5.33333 7.99998 5.33333C9.47273 5.33333 10.6667 6.52727 10.6667 8.00002C10.6667 9.47277 9.47273 10.6667 7.99998 10.6667ZM13.2304 3.72959C13.2304 4.25979 12.8006 4.68961 12.2704 4.68961C11.7402 4.68961 11.3104 4.25979 11.3104 3.72959C11.3104 3.19939 11.7402 2.7696 12.2704 2.7696C12.8006 2.7696 13.2304 3.19939 13.2304 3.72959Z" fill="currentColor"></path></svg>
+  <svg style="margin-left: 20px;" class="svg" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="" stroke-color="currentColor" fill-color="currentColor" data-v-d33eade6="" data-v-e79eec49=""><path d="M7.99984 0C3.58169 0 0 3.59492 0 8.02939C0 11.7948 2.58299 14.9546 6.0674 15.8224V10.4832H4.41783V8.02939H6.0674V6.97208C6.0674 4.2392 7.29969 2.97248 9.97292 2.97248C10.4798 2.97248 11.3543 3.07236 11.7121 3.17193V5.39607C11.5233 5.37616 11.1953 5.3662 10.7879 5.3662C9.47629 5.3662 8.96942 5.86499 8.96942 7.16157V8.02939H11.5825L11.1335 10.4832H8.96942V16C12.9306 15.5198 16 12.1347 16 8.02939C15.9997 3.59492 12.418 0 7.99984 0Z" fill="currentColor"></path></svg>
+  <svg style="margin-left: 20px;" class="svg" width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="" stroke-color="currentColor" fill-color="currentColor" data-v-d33eade6="" data-v-e79eec49=""><path fill-rule="evenodd" clip-rule="evenodd" d="M9.98444 0C10.2484 2.27047 11.5154 3.62412 13.7183 3.76812V6.32181C12.4417 6.44661 11.3234 6.029 10.0228 5.24177V10.0179C10.0228 16.0853 3.40944 17.9814 0.750647 13.6324C-0.957893 10.834 0.0883477 5.92339 5.56911 5.72659V8.41947C5.15158 8.48668 4.70524 8.59228 4.29731 8.73148C3.07829 9.1443 2.3872 9.91712 2.57917 11.2804C2.94871 13.8917 7.73838 14.6645 7.34004 9.56191V0.00480016H9.98444V0Z" fill="currentColor"></path></svg></div>
+  <svg style="margin-left: 20px;" class="svg" width="16" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="" stroke-color="currentColor" fill-color="currentColor" data-v-d33eade6="" data-v-e79eec49=""><path d="M11.0701 0H11.1925C12.3228 0.004125 18.0496 0.0453753 19.5938 0.460625C20.0606 0.587357 20.4859 0.834381 20.8273 1.17701C21.1688 1.51964 21.4143 1.94588 21.5394 2.41313C21.6782 2.93563 21.7759 3.62725 21.8419 4.34088L21.8556 4.48388L21.8859 4.84137L21.8969 4.98438C21.9862 6.24113 21.9972 7.41812 21.9986 7.67525V7.77838C21.9972 8.04513 21.9849 9.30187 21.8859 10.6109L21.8749 10.7552L21.8625 10.8983C21.7937 11.6848 21.692 12.4658 21.5394 13.0405C21.4147 13.5079 21.1693 13.9344 20.8278 14.2771C20.4863 14.6198 20.0607 14.8666 19.5938 14.993C17.9988 15.422 11.9364 15.4523 11.0962 15.4536H10.901C10.4761 15.4536 8.71887 15.4454 6.87637 15.3821L6.64262 15.3739L6.523 15.3684L6.28788 15.3588L6.05275 15.3491C4.5265 15.2817 3.07313 15.1731 2.4035 14.9916C1.93667 14.8654 1.51121 14.6187 1.16975 14.2763C0.828277 13.9338 0.582789 13.5077 0.457875 13.0405C0.30525 12.4671 0.2035 11.6848 0.13475 10.8983L0.12375 10.7539L0.11275 10.6109C0.0448904 9.67917 0.00728732 8.74552 0 7.81137L0 7.64225C0.00275 7.34662 0.01375 6.325 0.088 5.1975L0.097625 5.05587L0.10175 4.98438L0.11275 4.84137L0.143 4.48388L0.15675 4.34088C0.22275 3.62725 0.320375 2.93425 0.45925 2.41313C0.583954 1.94569 0.829348 1.51925 1.17083 1.17656C1.51231 0.833874 1.93788 0.586977 2.40488 0.460625C3.0745 0.281875 4.52787 0.171875 6.05412 0.103125L6.28788 0.0934999L6.52437 0.0852502L6.64262 0.0811252L6.87775 0.0715002C8.18635 0.0293902 9.49548 0.00601269 10.8047 0.00137506H11.0701V0ZM8.8 4.41375V11.0385L14.5159 7.7275L8.8 4.41375Z" fill="currentColor"></path></svg>
+  <svg style="margin-left: 20px;" class="svg" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="" stroke-color="currentColor" fill-color="currentColor" data-v-d33eade6="" data-v-e79eec49=""><path fill-rule="evenodd" clip-rule="evenodd" d="M16 8C16 12.4183 12.4183 16 8 16C3.58172 16 0 12.4183 0 8C0 3.58172 3.58172 0 8 0C12.4183 0 16 3.58172 16 8ZM8.28668 5.90595C7.50857 6.2296 5.95342 6.89946 3.62126 7.91555C3.24256 8.06615 3.04417 8.21348 3.02611 8.35754C2.99559 8.601 3.30047 8.69687 3.71565 8.82741C3.77212 8.84517 3.83064 8.86357 3.89062 8.88307C4.29909 9.01585 4.84855 9.17118 5.13419 9.17735C5.3933 9.18295 5.68249 9.07613 6.00176 8.85689C8.18077 7.386 9.30559 6.64254 9.37621 6.62651C9.42603 6.6152 9.49507 6.60099 9.54184 6.64256C9.58862 6.68414 9.58402 6.76288 9.57907 6.784C9.54886 6.91276 8.35208 8.0254 7.73275 8.60119C7.53967 8.78069 7.40272 8.90801 7.37472 8.93709C7.312 9.00223 7.24809 9.06385 7.18665 9.12307C6.80718 9.48889 6.52261 9.76321 7.20241 10.2112C7.52909 10.4265 7.79051 10.6045 8.05131 10.7821C8.33612 10.9761 8.62019 11.1695 8.98774 11.4104C9.08139 11.4718 9.17082 11.5356 9.25793 11.5977C9.58938 11.834 9.88717 12.0463 10.2551 12.0124C10.4688 11.9928 10.6896 11.7917 10.8018 11.1922C11.0668 9.77543 11.5878 6.70564 11.7081 5.44065C11.7187 5.32982 11.7054 5.18798 11.6948 5.12572C11.6841 5.06345 11.6618 4.97474 11.5809 4.90907C11.4851 4.83129 11.3371 4.81489 11.2709 4.81606C10.97 4.82136 10.5084 4.98188 8.28668 5.90595Z" fill="currentColor"></path></svg>
+</div>
+<div class="divg">
+<img class="footer-payment" src="https://cdn0.it4profit.com/s3size/el:t/rt:fill/plain/s3://cms/product/ec/50/ec5020d9df396125a9d714effb746e6a/apple_pay.webp" alt="">
+<img style="margin-left: 5px;" class="footer-payment" src="https://cdn0.it4profit.com/s3size/el:t/rt:fill/plain/s3://cms/product/c9/eb/c9ebabb04d110ae5e2031bbcea8948fc/googlepay.webp" alt="">
+<img style="margin-left: 5px;" class="footer-payment" src="https://cdn0.it4profit.com/s3size/el:t/rt:fill/plain/s3://cms/product/8f/6c/8f6c78272b25fe88e94b072207f018c7/mastercard.webp" alt="">
+<img style="margin-left: 5px;" class="footer-payment" src="https://cdn0.it4profit.com/s3size/el:t/rt:fill/plain/s3://cms/product/52/f7/52f762ab78f204caec9424d3b93a086a/visa.webp" alt="">
+<p class="footer_copyright">2025 iSpace Azerbaijan. All rights reserved.</p>
+</div>
+
+
+
+</div>
+
+
+</footer>
+

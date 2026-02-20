@@ -1,0 +1,183 @@
+{% extends 'base.html' %}
+ {% load static %}
+  {% block css %}
+  <link rel="stylesheet" href="{% static 'css/services.css' %}">
+  {% endblock %}
+ {% block content %}
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- -------------- -->
+
+
+
+<div>
+    <div class="container-fluid">
+	<div class="row">
+		<div class="col-md-6">
+            <div style="margin-top: 70px; margin-left: 135px;">
+            <h2 class="card-h2">Services for Mac</h2>
+            <a href="{% url 'core:mac' %}">
+            <button class="card-button">Buy now</button>
+            </a>
+            </div>
+		</div>
+		<div class="col-md-6">
+            <div style="text-align: right;">
+            <img class="card-img" src="https://cdn0.it4profit.com/s3size/el:t/h:540/rt:fill/plain/s3://cms/category/dd/50/dd5036f761a56dfaa3a77f41cfe5c1d7/serv_mac.webp" alt="">
+            </div>
+        </div>
+        <hr style="background-color: #7D7D7D; opacity: 0.3; width: 100%; margin-top: 30px;">
+	</div>
+</div>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-6">
+            <div style="margin-top: 70px; margin-left: 135px;">
+            <h2 class="card-h2">Services for iPad</h2>
+            <a href="{% url 'core:ipad' %}">
+            <button class="card-button">Buy now</button>
+            </a>
+            </div>
+		</div>
+		<div class="col-md-6">
+            <div style="text-align: right;">
+            <img class="card-img" src="https://cdn0.it4profit.com/s3size/el:t/h:540/rt:fill/plain/s3://cms/category/9b/88/9b88dc49214da7abe0f5bcc4d1e4c85f/serv_ipad.webp" alt="">
+            </div>
+        </div>
+        <hr style="background-color: #7D7D7D; opacity: 0.3; width: 100%; margin-top: 30px;">
+	</div>
+</div>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-6">
+            <div style="margin-top: 70px; margin-left: 135px;">
+            <h2 class="card-h2">Services for iPhone</h2>
+            <a href="{% url 'core:iphone' %}">
+            <button class="card-button">Buy now</button>
+            </a>
+            </div>
+		</div>
+		<div class="col-md-6">
+            <div style="text-align: right;">
+            <img class="card-img" src="https://cdn0.it4profit.com/s3size/el:t/h:540/rt:fill/plain/s3://cms/category/5c/4d/5c4d06af7020e121f11fde0e38777fd0/serv_iph.webp" alt="">
+            </div>
+        </div>
+        <hr style="background-color: #7D7D7D; opacity: 0.3; width: 100%; margin-top: 30px;">
+	</div>
+</div>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-6">
+            <div style="margin-top: 70px; margin-left: 135px;">
+            <h2 class="card-h2">Services for Apple Watch</h2>
+            <a href="{% url 'core:watch' %}">
+            <button class="card-button">Buy now</button>
+            </a>
+            </div>
+		</div>
+		<div class="col-md-6">
+            <div style="text-align: right;">
+            <img class="card-img" src="https://cdn0.it4profit.com/s3size/el:t/h:540/rt:fill/plain/s3://cms/category/45/4a/454a70a584473fc74c7ac3265f95f5b0/serv_aw_1.webp" alt="">
+            </div>
+        </div>
+        <hr style="background-color: #7D7D7D; opacity: 0.3; width: 100%; margin-top: 30px;">
+	</div>
+</div>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-6">
+            <div style="margin-top: 70px; margin-left: 135px;">
+            <h2 class="card-h2">Services for Airpods</h2>
+            <a href="{% url 'core:airpods' %}">
+            <button class="card-button">Buy now</button>
+            </a>
+            </div>
+		</div>
+		<div class="col-md-6">
+            <div style="text-align: right;">
+            <img class="card-img" src="https://cdn0.it4profit.com/s3size/el:t/h:540/rt:fill/plain/s3://cms/category/88/62/88627168ae310f4677731f04f611a981/serv_ap.webp" alt="">
+            </div>
+        </div>
+        <hr style="background-color: #7D7D7D; opacity: 0.3; width: 100%; margin-top: 30px;">
+	</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script>
+    const track = document.getElementById('track');
+    const btnLeft = document.getElementById('leftBtn');
+    const btnRight = document.getElementById('rightBtn');
+
+    btnLeft.addEventListener('click', () => {
+      track.scrollBy({ left: -300, behavior: 'smooth' });
+    });
+
+    btnRight.addEventListener('click', () => {
+      track.scrollBy({ left: 300, behavior: 'smooth' });
+    });
+  </script>
+
+
+
+{% endblock %}
