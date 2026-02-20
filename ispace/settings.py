@@ -48,6 +48,8 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
 ]
 
+# salam
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
