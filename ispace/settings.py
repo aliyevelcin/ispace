@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-3imt3fa&s65j*#nah8g7ragm85!wk)ke3ne4)@j^s7@n^*srpa
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'ispace.com',
+    'ispace.onrender.com',
     '127.0.0.1',
     'localhost',
 
